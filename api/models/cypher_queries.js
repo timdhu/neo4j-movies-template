@@ -10,7 +10,10 @@ var _singleNodeWithDetails = function (record) {}
 
 // Export many nodes and relationships
 function manyNodes(neo4jResult) {
-    return neo4jResult.records.map(r => new NodeType(r.get('node')))
+  var result = {};
+  result.nodes = neo4jResult.records.map(r => new NodeType(r.get('node')))
+  result.relationships = neo4jResult.records.map(r => new RelationshipType(r.get('relationship')))
+  return result
 }
 
 // Get all nodes of a particular type
@@ -22,9 +25,22 @@ var getAllOneNodeType = function (session, nodeLabel) {
     'RETURN node'
   ].join(' ')
   return session
-    .run('MATCH (asset:Asset) RETURN asset')
+    .run(query)
     .then(r => manyAssets(r));
 };
+
+// get a single node by ID, provide Label to speed up query
+var getNodeByID = function(session,nodeLabel, nodeID) {
+  var query = [
+    'MATCH (node:',
+    nodeLabel,
+    ')',
+    'WHERE id(node)=',
+    nodeID.toStr(),
+    'RETURN node'
+  ]
+
+}
 
 // Get all nodes and relationships one step away from start node
 var getAllOneDistNeighbours = function (session, nodeLabel, startId) {
@@ -60,5 +76,8 @@ var getByStringMatch {}
 
 // get all nodes and properties in a shortest path between two nodes
 var getShortestPath {}
+
+// Get all nodes in one community and any relationships in the community
+var getCommunity {}
 
 // Export exposed functions
