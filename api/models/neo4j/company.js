@@ -2,7 +2,7 @@
 
 var _ = require('lodash');
 
-var Person = module.exports = function (_node) {
+var City = module.exports = function (_node) {
   _.extend(this, _node.properties);
   if (this.id) {
     this.id = this.identity.toInt();
@@ -12,5 +12,8 @@ var Person = module.exports = function (_node) {
   };
   if (this.pagerank) {
     this.pagerank = this.pagerank.toNumber();
+  };
+  if (this.market_capitalization_usd) {
+    this.market_capitalization_usd = this.market_capitalization_usd.toNumber();
   };
 };
