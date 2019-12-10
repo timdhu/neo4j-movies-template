@@ -80,6 +80,8 @@ api.get('/people', routes.people.list);
 api.get('/people/:id', routes.people.findById);
 api.get('/people/bacon', routes.people.getBaconPeople);
 api.get('/genres', routes.genres.list);
+// include new routes here
+api.get()
 
 //api error handler
 api.use(function(err, req, res, next) {
