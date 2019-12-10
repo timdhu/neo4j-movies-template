@@ -1,6 +1,7 @@
 var express = require('express')
   , path = require('path')
   , routes = require('./routes')
+  , new_route = require('./routes/cypher_queries')
   , nconf = require('./config')
   , swaggerJSDoc = require('swagger-jsdoc')
   , methodOverride = require('method-override')
@@ -80,8 +81,19 @@ api.get('/people', routes.people.list);
 api.get('/people/:id', routes.people.findById);
 api.get('/people/bacon', routes.people.getBaconPeople);
 api.get('/genres', routes.genres.list);
+
 // include new routes here
-api.get()
+api.get('/nodes/label/:nodeLabel', routes.cypher_queries.list );
+api.get('/nodes/id/:id', routes.cypher_queries.findNodeByID)
+api.get('/nodes/labelid/:nodeLabel/:id', routes.cypher_queries.findNodeByIDandLabel)
+api.get('/nodes/neighbours/:nodeLabel/:id', routes.cypher_queries.findAllOneDistNeighbours)
+api.get('/nodes/neighbours/:nodeLabel/:id/:neighbourLabel', routes.cypher_queries.findAllOneDistNeighboursByType)
+api.get('/nodes/neighbours2/:nodeLabel/:id', routes.cypher_queries.findAllTwoDistNeighbours)
+api.get('/nodes/range/:nodeLabel/:property/:min/:max', routes.cypher_queries.findByMaxMinProperty)
+api.get('/nodes/match/:nodeLabel/:property/:stringMatch', routes.cypher_queries.findByStringMatch)
+api.get('/nodes/shortestPath', routes.cypher_queries.findShortestPath)
+// api.get('nodes/community/:community', routes.cypher_queries.findCommunity)
+
 
 //api error handler
 api.use(function(err, req, res, next) {

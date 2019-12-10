@@ -1,4 +1,4 @@
-// movies.js
+// cypher_queries.js
 var Cypher_Queries = require('../models/cypher_queries')
   , _ = require('lodash')
   , writeResponse = require('../helpers/response').writeResponse
@@ -15,25 +15,26 @@ var Cypher_Queries = require('../models/cypher_queries')
  *       id:
  *         type: integer
  *       properties:
- *         type: object
+ *         type: string
  */
+
 
 /**
  * @swagger
- * /api/v0/nodes/{nodeLabel}:
+ * /api/v0/nodes/label/{nodeLabel}:
  *   get:
  *     tags:
  *     - nodes
  *     description: Find all nodes with a particular label
  *     summary: Find all nodes with a particular label
+ *     produces:
+ *       - application/json
  *     parameters:
  *       - name: nodeLabel
  *         description: label of nodes
  *         in: path
  *         required: true
  *         type: string
- *     produces:
- *       - application/json
  *     responses:
  *       200:
  *         description: A list of nodes with a particular node label
@@ -45,14 +46,15 @@ var Cypher_Queries = require('../models/cypher_queries')
  *          description: Node label not found
  */
 exports.list = function (req, res, next) {
-  Cypher_Queries.getAllOneNodeType(dbUtils.getSession(req),req.params.nodeLabel)
+  var nodeLabel = req.params.nodeLabel;
+  Cypher_Queries.getAllOneNodeType(dbUtils.getSession(req),nodeLabel)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
 
 /**
  * @swagger
- * /api/v0/nodes/{nodeLabel}/{id}:
+ * /api/v0/nodes/id/{id}:
  *   get:
  *     tags:
  *     - nodes
@@ -61,11 +63,6 @@ exports.list = function (req, res, next) {
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: nodeLabel
- *         description: label of nodes
- *         in: path
- *         required: true
- *         type: string
  *       - name: id
  *         description: neo4j ID of node
  *         in: path
@@ -80,7 +77,42 @@ exports.list = function (req, res, next) {
  *         description: node not found
  */
 exports.findNodeByID = function (req, res, next) {
-  Cypher_Queries.getNodeByID(dbUtils.getSession(req), req.params.nodeLabel, req.params.id)
+  Cypher_Queries.getNodeByID(dbUtils.getSession(req), req.params.id)
+    .then(response => writeResponse(res, response))
+    .catch(next);
+};
+
+/**
+ * @swagger
+ * /api/v0/nodes/labelid/{nodeLabel}/{id}:
+ *   get:
+ *     tags:
+ *     - nodes
+ *     description: Find node by label and ID
+ *     summary: Find node by label and ID
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: neo4j ID of node
+ *         in: path
+ *         required: true
+ *         type: integer
+ *       - name: nodeLabel
+ *         description: label of node
+ *         in: path
+ *         required: true
+ *         type: integer
+ *     responses:
+ *       200:
+ *         description: A node
+ *         schema:
+ *           $ref: '#/definitions/node'
+ *       404:
+ *         description: node not found
+ */
+exports.findNodeByIDandLabel= function (req, res, next) {
+  Cypher_Queries.getNodeByIDandLabel(dbUtils.getSession(req), req.params.id, req.params.nodeLabel)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
@@ -160,8 +192,7 @@ exports.findAllOneDistNeighbours = function (req, res, next) {
 exports.findAllOneDistNeighboursByType = function (req, res, next) {
   var id = req.params.id;
   if (!id) throw {message: 'Invalid id', status: 400};
-
-  Cypher_Queries.getAllOneDistNeighbours(dbUtils.getSession(req), req.params.nodeLabel, id, req.params.neighbourLabel)
+  Cypher_Queries.getAllOneDistNeighboursByType(dbUtils.getSession(req), req.params.nodeLabel, id, req.params.neighbourLabel)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
@@ -169,7 +200,7 @@ exports.findAllOneDistNeighboursByType = function (req, res, next) {
 
 /**
  * @swagger
- * /api/v0/nodes/neighbours/{nodeLabel}/{id}:
+ * /api/v0/nodes/neighbours2/{nodeLabel}/{id}:
  *   get:
  *     tags:
  *     - nodes
@@ -230,12 +261,12 @@ exports.findAllTwoDistNeighbours = function (req, res, next) {
  *         description: Start of range
  *         in: path
  *         required: true
- *         type: integer
+ *         type: string
  *       - name: max
  *         description: End of range
  *         in: path
  *         required: true
- *         type: integer
+ *         type: string
  *     responses:
  *       200:
  *         description: A list of nodes
@@ -246,21 +277,21 @@ exports.findAllTwoDistNeighbours = function (req, res, next) {
  *       400:
  *         description: Error message(s)
  */
-exports.findByMaxMin = function (req, res, next) {
+exports.findByMaxMinProperty = function (req, res, next) {
   var min = req.params.min;
   var max = req.params.max;
 
   if (!min) throw {message: 'Invalid min', status: 400};
   if (!max) throw {message: 'Invalid max', status: 400};
 
-  Cypher_Queries.getByMaxMin(dbUtils.getSession(req), start, end)
+  Cypher_Queries.getByMaxMinProperty(dbUtils.getSession(req), req.params.nodeLabel, req.params.property, min, max)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
 
 /**
  * @swagger
- * /api/v0/nodes/{nodeLabel}/{property}/{stringMatch}:
+ * /api/v0/nodes/match/{nodeLabel}/{property}/{stringMatch}:
  *   get:
  *     tags:
  *     - nodes
@@ -298,7 +329,7 @@ exports.findByStringMatch = function (req, res, next) {
   var stringMatch = req.params.stringMatch;
   if (!stringMatch) throw {message: 'Invalid id', status: 400};
 
-  Movies.getByStringMatch(dbUtils.getSession(req), req.params.nodeLabel, req.params.property, stringMatch)
+  Cypher_Queries.getByStringMatch(dbUtils.getSession(req), req.params.nodeLabel, req.params.property, stringMatch)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
@@ -326,19 +357,14 @@ exports.findByStringMatch = function (req, res, next) {
  *         type: string
  *       - name: startID
  *         description: neo4j ID of start node
- *         in: path
+ *         in: query
  *         required: true
  *         type: integer
  *       - name: endID
  *         description: neo4j ID of end node
- *         in: path
+ *         in: query
  *         required: true
  *         type: integer
- *       - name: relationships
- *         description: array of relationships of interest
- *         in: path
- *         required: true
- *         type: array
  *     responses:
  *       200:
  *         description: A list of nodes and relationships
@@ -352,7 +378,7 @@ exports.findShortestPath = function (req, res, next) {
   var endID = req.params.endID;
     if (!startID) throw {message: 'Invalid id', status: 400};
   if (!endID) throw {message: 'Invalid id', status: 400};
-  People.getShortestPath(dbUtils.getSession(req), req.params.startLabel, startID, req.params.endLabel, endID, req.params.relationships)
+  People.getShortestPath(dbUtils.getSession(req), req.params.startLabel, startID, req.params.endLabel, endID)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
