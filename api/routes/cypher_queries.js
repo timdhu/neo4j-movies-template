@@ -6,18 +6,64 @@ var Cypher_Queries = require('../models/cypher_queries')
   , loginRequired = require('../middlewares/loginRequired')
   , dbUtils = require('../neo4j/dbUtils');
 
-/**
- * @swagger
- * definition:
- *   Node:
- *     type: object
- *     properties:
- *       id:
- *         type: integer
- *       properties:
- *         type: string
- */
-
+ /**
+  * @swagger
+  * definition:
+  *   Output:
+  *     type: object
+  *     properties:
+  *       nodes:
+  *         type: array
+  *         items:
+  *           type: object
+  *           properties:
+  *             identity:
+  *               type: object
+  *               properties:
+  *                 low: integer
+  *                 high: integer
+  *             labels:
+  *               type: array
+  *               items: string
+  *             properties:
+  *               type: object
+  *               properties:
+  *                 id:
+  *                   type: object
+  *                   properties:
+  *                     low: integer
+  *                     high: integer
+  *       relationships:
+  *         type: array
+  *         items:
+  *           type: object
+  *           properties:
+  *             identity:
+  *               type: object
+  *               properties:
+  *                 low: integer
+  *                 high: integer
+  *             start:
+  *               type: object
+  *               properties:
+  *                 low: integer
+  *                 high: integer
+  *             end:
+  *               type: object
+  *               properties:
+  *                 low: integer
+  *                 high: integer
+  *             type:
+  *               type: string
+  *             properties:
+  *               type: object
+  *               properties:
+  *                 id:
+  *                   type: object
+  *                   properties:
+  *                     low: integer
+  *                     high: integer
+  */
 
 /**
  * @swagger
@@ -41,7 +87,7 @@ var Cypher_Queries = require('../models/cypher_queries')
  *         schema:
  *           type: array
  *           items:
- *             $ref: '#/definitions/Node'
+ *             $ref: '#/definitions/Output'
  *       404:
  *          description: Node label not found
  */
@@ -58,8 +104,8 @@ exports.list = function (req, res, next) {
  *   get:
  *     tags:
  *     - nodes
- *     description: Find node by label and ID
- *     summary: Find node by label and ID
+ *     description: Find node by ID
+ *     summary: Find node by ID
  *     produces:
  *       - application/json
  *     parameters:
@@ -72,7 +118,7 @@ exports.list = function (req, res, next) {
  *       200:
  *         description: A node
  *         schema:
- *           $ref: '#/definitions/node'
+ *           $ref: '#/definitions/Output'
  *       404:
  *         description: node not found
  */
@@ -107,7 +153,7 @@ exports.findNodeByID = function (req, res, next) {
  *       200:
  *         description: A node
  *         schema:
- *           $ref: '#/definitions/node'
+ *           $ref: '#/definitions/Output'
  *       404:
  *         description: node not found
  */
@@ -142,7 +188,7 @@ exports.findNodeByIDandLabel= function (req, res, next) {
  *       200:
  *         description: All nodes and their relationships with start node
  *         schema:
- *           $ref: '#/definitions/node'
+ *           $ref: '#/definitions/Output'
  *       404:
  *         description: node not found
  */
@@ -162,7 +208,7 @@ exports.findAllOneDistNeighbours = function (req, res, next) {
  *     tags:
  *     - nodes
  *     description: Returns all nodes of given label related to node given by label and id
- *     summary: Returns all nodes related to node given by label and id
+ *     summary: Returns all nodes of given label related to node given by label and id
  *     produces:
  *       - application/json
  *     parameters:
@@ -185,7 +231,7 @@ exports.findAllOneDistNeighbours = function (req, res, next) {
  *       200:
  *         description: All nodes of a given label and their relationships with start node
  *         schema:
- *           $ref: '#/definitions/node'
+ *           $ref: '#/definitions/Output'
  *       404:
  *         description: node not found
  */
@@ -223,7 +269,7 @@ exports.findAllOneDistNeighboursByType = function (req, res, next) {
  *       200:
  *         description: All nodes and their relationships with start node
  *         schema:
- *           $ref: '#/definitions/node'
+ *           $ref: '#/definitions/Output'
  *       404:
  *         description: node not found
  */
@@ -242,8 +288,8 @@ exports.findAllTwoDistNeighbours = function (req, res, next) {
  *   get:
  *     tags:
  *     - nodes
- *     description: Returns nodes where a given property is within a range
- *     summary: Returns nodes where a given property is within a range
+ *     description: Returns nodes of distance 2 where a given property is within a range
+ *     summary: Returns nodes of distance 2 where a given property is within a range
  *     produces:
  *       - application/json
  *     parameters:
@@ -253,7 +299,7 @@ exports.findAllTwoDistNeighbours = function (req, res, next) {
  *         required: true
  *         type: string
  *       - name: property
- *         description: property of interes
+ *         description: property of interest
  *         in: path
  *         required: true
  *         type: string
@@ -273,7 +319,7 @@ exports.findAllTwoDistNeighbours = function (req, res, next) {
  *         schema:
  *           type: array
  *           items:
- *             $ref: '#/definitions/node'
+ *             $ref: '#/definitions/Output'
  *       400:
  *         description: Error message(s)
  */
@@ -321,7 +367,7 @@ exports.findByMaxMinProperty = function (req, res, next) {
  *         schema:
  *           type: array
  *           items:
- *             $ref: '#/definitions/Node'
+ *             $ref: '#/definitions/Output'
  *       400:
  *         description: Error message(s)
  */
@@ -336,79 +382,151 @@ exports.findByStringMatch = function (req, res, next) {
 
 /**
  * @swagger
- * /api/v0/nodes/shortestPath:
+ * /api/v0/nodes/shortestPath/{startLabel}/{startID}/{endLabel}/{endID}/{relationshipList}:
  *   get:
  *     tags:
  *     - nodes
- *     description: Returns path from node 1 to node 2.
- *     summary: Returns path from node 1 to node 2.
+ *     description: Returns path from node 1 to node 2 using node IDs.
+ *     summary: Returns path from node 1 to node 2 using node IDs.
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: startLabel
  *         description: Label of the start node
- *         in: query
+ *         in: path
  *         required: true
  *         type: string
  *       - name: endLabel
  *         description: Label of the end node
- *         in: query
+ *         in: path
  *         required: true
  *         type: string
  *       - name: startID
  *         description: neo4j ID of start node
- *         in: query
+ *         in: path
  *         required: true
  *         type: integer
  *       - name: endID
  *         description: neo4j ID of end node
- *         in: query
+ *         in: path
  *         required: true
  *         type: integer
+ *       - name: relationshipList
+ *         description: array of relationships allowed in query
+ *         in: path
+ *         required: false
+ *         schema:
+ *           type: array
+ *           items:
+ *             type: string
+ *         style: matrix
+ *         explode: true
  *     responses:
  *       200:
  *         description: A list of nodes and relationships
  *         schema:
  *           type: array
  *           items:
- *             $ref: '#/definitions/node'
+ *             $ref: '#/definitions/Output'
  */
 exports.findShortestPath = function (req, res, next) {
   var startID = req.params.startID;
   var endID = req.params.endID;
-    if (!startID) throw {message: 'Invalid id', status: 400};
+  var relationshipList = req.params.relationshipList;
+  if (!startID) throw {message: 'Invalid id', status: 400};
   if (!endID) throw {message: 'Invalid id', status: 400};
-  People.getShortestPath(dbUtils.getSession(req), req.params.startLabel, startID, req.params.endLabel, endID)
+  Cypher_Queries.getShortestPath(dbUtils.getSession(req), req.params.startLabel, startID, req.params.endLabel, endID, relationshipList)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
 
 /**
  * @swagger
- * /api/v0/nodes/{community}:
+ * /api/v0/nodes/shortestPathProperties/{startLabel}/{startProperty}/{startValue}/{endLabel}/{endProperty}/{endValue}:
  *   get:
  *     tags:
  *     - nodes
- *     description: Find nodes and relationships in a given community
- *     summary: Find nodes and relationships in a given community
+ *     description: Returns path from node 1 to node 2 using properties. Only accepts string values
+ *     summary: Returns path from node 1 to node 2 using properties. Only accepts string values
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: community
+ *       - name: startLabel
+ *         description: Label of the start node
+ *         in: path
+ *         required: true
+ *         type: string
+ *       - name: endLabel
+ *         description: Label of the end node
+ *         in: path
+ *         required: true
+ *         type: string
+ *       - name: startProperty
+ *         description: property of start node
+ *         in: path
+ *         required: true
+ *         type: string
+ *       - name: endProperty
+ *         description: property of end node
+ *         in: path
+ *         required: true
+ *         type: string
+ *       - name: startValue
+ *         description: value of start property
+ *         in: path
+ *         required: true
+ *         type: string
+ *       - name: endValue
+ *         description: value of end property
+ *         in: path
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: A list of nodes and relationships
+ *         schema:
+ *           type: array
+ *           items:
+ *             $ref: '#/definitions/Output'
+ */
+exports.findShortestPathWithProperties = function (req, res, next) {
+  var startValue = req.params.startValue;
+  var endValue = req.params.endValue;
+  if (!startValue) throw {message: 'Invalid value', status: 400};
+  if (!endValue) throw {message: 'Invalid value', status: 400};
+  Cypher_Queries.getShortestPathWithProperties(dbUtils.getSession(req), req.params.startLabel, req.params.startProperty, startValue, req.params.endLabel,req.params.endProperty, endValue)
+    .then(response => writeResponse(res, response))
+    .catch(next);
+};
+
+
+/**
+ * @swagger
+ * /api/v0/nodes/community/{communityID}:
+ *   get:
+ *     tags:
+ *     - nodes
+ *     description: Find all nodes and relationships by community ID
+ *     summary: Find all nodes and relationships by community ID
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: communityID
  *         description: ID of community
  *         in: path
  *         required: true
  *         type: integer
  *     responses:
  *       200:
- *         description: A node
+ *         description: Nodes and relationships in the community
  *         schema:
- *           $ref: '#/definitions/node'
+ *           $ref: '#/definitions/Output'
  *       404:
  *         description: node not found
  */
 exports.findCommunity= function (req, res, next) {
-  Cypher_Queries.getNodeByID(dbUtils.getSession(req), req.params.community)
+  console.log(req.params)
+  Cypher_Queries.getCommunity(dbUtils.getSession(req), req.params.communityID)
     .then(response => writeResponse(res, response))
     .catch(next);
 };

@@ -19,11 +19,18 @@ var _singleNode = function (record) {
 // Export many nodes and relationships
 function returnNodesAndRelationships(neo4jResult) {
   var result = {};
-  result.nodes = neo4jResult.records.map(r => new NodeType(r.get('node')))
+  if (neo4jResult.records.some(r => r.keys[0]==='node')) {
+    result.nodes = neo4jResult.records.map(r =>
+      new NodeType(r.get('node'))
+    )
+  };
 
     if (neo4jResult.records.some(r => r.keys[1]==='relationship')) {
     result.relationships = neo4jResult.records.map(r => new RelationshipType(r.get('relationship')))
   };
+
+  // Bug: if there are nodes and relationships then the results are stored differently
+
   return result;
 };
 
@@ -33,7 +40,7 @@ var getAllOneNodeType = function (session, nodeLabel="Movie") {
     'MATCH (node:',
     nodeLabel,
     ') ',
-    'RETURN node'
+    'RETURN collect(DISTINCT node) AS node'
   ].join('');
 
   return session
@@ -47,8 +54,8 @@ var getNodeByID = function(session, nodeId) {
   var query = [
     'MATCH (node',
     ') ',
-    'WHERE node.id={nodeId} ',
-    'RETURN node'
+    'WHERE id(node)={nodeId} ',
+    'RETURN collect(DISTINCT node) AS node'
   ].join('');
 
   return session
@@ -70,7 +77,7 @@ var getNodeByIDandLabel = function(session, nodeId, nodeLabel) {
     nodeLabel,
     ') ',
     'WHERE node.id={nodeId} ',
-    'RETURN node'
+    'RETURN collect(DISTINCT node) AS node'
   ].join('');
 
   return session
@@ -91,7 +98,7 @@ var getAllOneDistNeighbours = function (session, startLabel, startId) {
     'MATCH (start:',
     startLabel,
     ') ',
-    'WHERE start.id={startId} ',
+    'WHERE id(start)={startId} ',
     'WITH start ',
     'MATCH (start)-[relationship]-(neighbours) ',
     'WITH relationship, [start,neighbours] AS nodes ',
@@ -110,7 +117,7 @@ var getAllOneDistNeighboursByType = function (session, startLabel, startId, neig
     'MATCH (start:',
     startLabel,
     ') ',
-    'WHERE start.id={startId} ',
+    'WHERE id(start)={startId} ',
     'WITH start ',
     'MATCH (start)-[relationship]-(neighbours:',
     neighbourLabel,
@@ -131,7 +138,7 @@ var getAllTwoDistNeighbours = function (session, startLabel, startId) {
     'MATCH (start:',
     startLabel,
     ') ',
-    'WHERE start.id={startId} ',
+    'WHERE id(start)={startId} ',
     'WITH start ',
     'MATCH (start)-[relationship *1..2]-(neighbours) ',
     'WITH relationship, [start,neighbours] AS nodes ',
@@ -151,7 +158,7 @@ var getByMaxMinProperty = function (session, nodeLabel, property, min, max) {
     nodeLabel,
     ') ',
     'WHERE node.' + property + ' > {min} AND node.' + property + ' < {max} ',
-    'RETURN node'
+    'RETURN collect(DISTINCT node) AS node'
   ].join('');
   return session.run(query, {
     min: parseInt(min),
@@ -166,7 +173,7 @@ var getByStringMatch = function (session, nodeLabel, property, stringMatch) {
     nodeLabel,
     ') ',
     'WHERE node.' + property + ' = {stringMatch} ',
-    'RETURN node'
+    'RETURN collect(DISTINCT node) AS node'
   ].join('');
   return session.run(query, {
     stringMatch: stringMatch
@@ -174,21 +181,61 @@ var getByStringMatch = function (session, nodeLabel, property, stringMatch) {
 };
 
 // get all nodes and properties in a shortest path between two nodes
-var getShortestPath = function (session, startLabel, startID, endLabel, endID) {
-  var query = [
-    'MATCH path=shortestPath((start:',
-    startLabel,
-    ' {_id:{startID}})',
-    '-[',
-    '*0..10]-(end:',
-    endLabel,
-    ' {_id:{endID}}))',
-    'RETURN path'
-  ].join(' ');
+var getShortestPath = function (session, startLabel, startID, endLabel, endID, relationshipList) {
 
+  if (relationshipList==='{relationshipList}') {relationshipList = []}
+  else {relationshipList = relationshipList.split("\n");
+  relationshipList = relationshipList.map(i => ':' + i)}
+
+  var relationshipString= relationshipList.join('|')
+
+  var query = [
+    'MATCH (start:',
+    startLabel,
+    ') ',
+    'WHERE id(start)={startID} ',
+    'WITH start ',
+    'MATCH (end:',
+    endLabel,
+    ') ',
+    'WHERE id(end)={endID} ',
+    'WITH start, end ',
+    'MATCH p = shortestPath( (start)-[',
+    relationshipString,
+    '*]-(end) ) ',
+    'WITH relationships(p) AS relationships, nodes(p) AS nodes ',
+    'UNWIND relationships AS relationship ',
+    'UNWIND nodes AS node ',
+    'RETURN collect(DISTINCT node) AS node, ',
+    'collect(DISTINCT relationship) AS relationship'
+  ].join(' ');
   return session.run(query, {
     startID: parseInt(startID),
     endID: parseInt(endID)
+  }).then(result => returnNodesAndRelationships(result));
+};
+
+// get  shortest path with nodes identified by a property.
+var getShortestPathWithProperties = function (session, startLabel, startProperty, startValue, endLabel, endProperty, endValue) {
+  var query = [
+    'MATCH p = shortestPath( (p1:',
+    startLabel,
+    '{',
+    startProperty,
+    ':{startValue}})-[*]-(target:',
+    endLabel,
+    '{',
+    endProperty,
+    ':{endValue}}) ) ',
+    'WITH relationships(p) AS relationships, nodes(p) AS nodes ',
+    'UNWIND relationships AS relationship ',
+    'UNWIND nodes AS node ',
+    'RETURN collect(DISTINCT node) AS node, ',
+    'collect(DISTINCT relationship) AS relationship'
+  ].join(' ');
+  return session.run(query, {
+    startValue: startValue,
+    endValue: endValue
   }).then(result => returnNodesAndRelationships(result));
 };
 
@@ -197,8 +244,11 @@ var getCommunity = function (session, communityID) {
   var query = [
     'MATCH (node1 {community:{communityID}})',
     'WITH node1',
-    'MATCH (node1)-[relationship]-(node2: {community:{communityID}})',
-    'RETURN relationship, [node1,node2] AS node'
+    'MATCH (node1)-[relationship]-(node2 {community:{communityID}})',
+    'WITH relationship, [node1,node2] AS nodes',
+    'UNWIND nodes AS node ',
+    'RETURN collect(DISTINCT node) AS node, ',
+    'collect(DISTINCT relationship) AS relationship'
   ].join(' ');
 
   return session.run(query, {
@@ -217,5 +267,6 @@ module.exports = {
   getByMaxMinProperty: getByMaxMinProperty,
   getByStringMatch: getByStringMatch,
   getShortestPath: getShortestPath,
+  getShortestPathWithProperties: getShortestPathWithProperties,
   getCommunity: getCommunity
 };
