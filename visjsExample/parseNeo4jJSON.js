@@ -13,7 +13,7 @@ function parseNeo4j(inputJSON, inputOptions) {
 var options = {
   nodes : {
     id : 'identity',
-    group : 'label',
+    group : 'labels',
     label: 'labels',
     value: 1,
     title: 'properties',
