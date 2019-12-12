@@ -1,0 +1,1018 @@
+{
+  "nodes": [
+    {
+      "0": {
+        "identity": {
+          "low": 3317,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "duration": {
+            "low": 100,
+            "high": 0
+          },
+          "rated": "PG",
+          "summary": "placeholder text",
+          "tagline": "Assembling in 2014",
+          "id": {
+            "low": 1366,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "title": "The LEGO Movie",
+          "poster_image": "http://image.tmdb.org/t/p/w185/lMHbadNmznKs5vgBAkHxKGHulOa.jpg"
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 3719,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Dave Franco",
+          "id": {
+            "low": 1377,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1985,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 3714,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Chris Pratt",
+          "id": {
+            "low": 1372,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1979,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 3710,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Channing Tatum",
+          "id": {
+            "low": 1368,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1980,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "4": {
+        "identity": {
+          "low": 3424,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Morgan Freeman",
+          "id": {
+            "low": 459,
+            "high": 0
+          },
+          "community": {
+            "low": 0,
+            "high": 0
+          },
+          "born": {
+            "low": 1937,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "5": {
+        "identity": {
+          "low": 3711,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Jonah Hill",
+          "id": {
+            "low": 1369,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1983,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "6": {
+        "identity": {
+          "low": 3507,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Liam Neeson",
+          "id": {
+            "low": 576,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1952,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/oxCCVmDSxWcqIyMknRoOAZkvb6D.jpg"
+        }
+      },
+      "7": {
+        "identity": {
+          "low": 3713,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Will Ferrell",
+          "id": {
+            "low": 1371,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1967,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "8": {
+        "identity": {
+          "low": 3718,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Charlie Day",
+          "id": {
+            "low": 1376,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1976,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "9": {
+        "identity": {
+          "low": 3715,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Will Arnett",
+          "id": {
+            "low": 1373,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1970,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "10": {
+        "identity": {
+          "low": 3579,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Anthony Daniels",
+          "id": {
+            "low": 716,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1946,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/cljvryjb3VwTsNR7fjQKjNPMaBB.jpg"
+        }
+      },
+      "11": {
+        "identity": {
+          "low": 3712,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Elizabeth Banks",
+          "id": {
+            "low": 1370,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1974,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "12": {
+        "identity": {
+          "low": 3717,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Nick Offerman",
+          "id": {
+            "low": 1375,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1970,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "13": {
+        "identity": {
+          "low": 3716,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Alison Brie",
+          "id": {
+            "low": 1374,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1982,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "14": {
+        "identity": {
+          "low": 3720,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Will Forte",
+          "id": {
+            "low": 1378,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1970,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "15": {
+        "identity": {
+          "low": 3709,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Cobie Smulders",
+          "id": {
+            "low": 1367,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1982,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "16": {
+        "identity": {
+          "low": 3721,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Phil Lord",
+          "id": {
+            "low": 1379,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1000,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "17": {
+        "identity": {
+          "low": 3724,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Chris Miller",
+          "id": {
+            "low": 1382,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1000,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "18": {
+        "identity": {
+          "low": 12,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "Comedy",
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "id": {
+            "low": 779,
+            "high": 0
+          }
+        }
+      },
+      "19": {
+        "identity": {
+          "low": 14,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "Animation",
+          "community": {
+            "low": 7,
+            "high": 0
+          },
+          "id": {
+            "low": 1256,
+            "high": 0
+          }
+        }
+      },
+      "20": {
+        "identity": {
+          "low": 0,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "Action",
+          "community": {
+            "low": 0,
+            "high": 0
+          },
+          "id": {
+            "low": 16,
+            "high": 0
+          }
+        }
+      },
+      "21": {
+        "identity": {
+          "low": 3722,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Dan Hageman",
+          "id": {
+            "low": 1380,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1000,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "22": {
+        "identity": {
+          "low": 3723,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Kevin Hageman",
+          "id": {
+            "low": 1381,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1000,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "0": {
+        "identity": {
+          "low": 5957,
+          "high": 0
+        },
+        "start": {
+          "low": 3719,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Wally (voice)"
+          ]
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 5951,
+          "high": 0
+        },
+        "start": {
+          "low": 3714,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Emmet (voice)"
+          ]
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 5947,
+          "high": 0
+        },
+        "start": {
+          "low": 3710,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Superman (voice)"
+          ]
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 5623,
+          "high": 0
+        },
+        "start": {
+          "low": 3424,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Vitruvius (voice)"
+          ]
+        }
+      },
+      "4": {
+        "identity": {
+          "low": 5948,
+          "high": 0
+        },
+        "start": {
+          "low": 3711,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Green Lantern (voice)"
+          ]
+        }
+      },
+      "5": {
+        "identity": {
+          "low": 5723,
+          "high": 0
+        },
+        "start": {
+          "low": 3507,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Bad Cop",
+            "Good cop (voice)"
+          ]
+        }
+      },
+      "6": {
+        "identity": {
+          "low": 5950,
+          "high": 0
+        },
+        "start": {
+          "low": 3713,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "President Business (voice)"
+          ]
+        }
+      },
+      "7": {
+        "identity": {
+          "low": 5956,
+          "high": 0
+        },
+        "start": {
+          "low": 3718,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Spaceman Benny (voice)"
+          ]
+        }
+      },
+      "8": {
+        "identity": {
+          "low": 5953,
+          "high": 0
+        },
+        "start": {
+          "low": 3715,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Batman (voice)"
+          ]
+        }
+      },
+      "9": {
+        "identity": {
+          "low": 5831,
+          "high": 0
+        },
+        "start": {
+          "low": 3579,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "C-3PO (voice)"
+          ]
+        }
+      },
+      "10": {
+        "identity": {
+          "low": 5949,
+          "high": 0
+        },
+        "start": {
+          "low": 3712,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Wyldstyle (voice)"
+          ]
+        }
+      },
+      "11": {
+        "identity": {
+          "low": 5955,
+          "high": 0
+        },
+        "start": {
+          "low": 3717,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Craggy (voice)"
+          ]
+        }
+      },
+      "12": {
+        "identity": {
+          "low": 5954,
+          "high": 0
+        },
+        "start": {
+          "low": 3716,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Uni-Kitty (voice)"
+          ]
+        }
+      },
+      "13": {
+        "identity": {
+          "low": 5958,
+          "high": 0
+        },
+        "start": {
+          "low": 3720,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Abraham Lincoln (voice)"
+          ]
+        }
+      },
+      "14": {
+        "identity": {
+          "low": 5945,
+          "high": 0
+        },
+        "start": {
+          "low": 3709,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Wonder Woman (voice)"
+          ]
+        }
+      },
+      "15": {
+        "identity": {
+          "low": 5483,
+          "high": 0
+        },
+        "start": {
+          "low": 3721,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "DIRECTED",
+        "properties": {}
+      },
+      "16": {
+        "identity": {
+          "low": 5484,
+          "high": 0
+        },
+        "start": {
+          "low": 3724,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "DIRECTED",
+        "properties": {}
+      },
+      "17": {
+        "identity": {
+          "low": 86,
+          "high": 0
+        },
+        "start": {
+          "low": 3317,
+          "high": 0
+        },
+        "end": {
+          "low": 12,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      },
+      "18": {
+        "identity": {
+          "low": 87,
+          "high": 0
+        },
+        "start": {
+          "low": 3317,
+          "high": 0
+        },
+        "end": {
+          "low": 14,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      },
+      "19": {
+        "identity": {
+          "low": 85,
+          "high": 0
+        },
+        "start": {
+          "low": 3317,
+          "high": 0
+        },
+        "end": {
+          "low": 0,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      },
+      "20": {
+        "identity": {
+          "low": 5342,
+          "high": 0
+        },
+        "start": {
+          "low": 3722,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "WRITER_OF",
+        "properties": {}
+      },
+      "21": {
+        "identity": {
+          "low": 5341,
+          "high": 0
+        },
+        "start": {
+          "low": 3721,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "WRITER_OF",
+        "properties": {}
+      },
+      "22": {
+        "identity": {
+          "low": 5343,
+          "high": 0
+        },
+        "start": {
+          "low": 3723,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "WRITER_OF",
+        "properties": {}
+      },
+      "23": {
+        "identity": {
+          "low": 5344,
+          "high": 0
+        },
+        "start": {
+          "low": 3724,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "WRITER_OF",
+        "properties": {}
+      }
+    }
+  ]
+}

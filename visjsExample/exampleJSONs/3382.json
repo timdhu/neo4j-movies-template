@@ -1,0 +1,227 @@
+{
+  "nodes": [
+    {
+      "0": {
+        "identity": {
+          "low": 3382,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Samuel L. Jackson",
+          "id": {
+            "low": 85,
+            "high": 0
+          },
+          "community": {
+            "low": 0,
+            "high": 0
+          },
+          "born": {
+            "low": 1948,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/dlW6prW9HwYDsIRXNoFYtyHpSny.jpg"
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 3308,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "duration": {
+            "low": 146,
+            "high": 0
+          },
+          "rated": "R",
+          "summary": "placeholder text",
+          "tagline": "Three Decades of Life in the Mafia.",
+          "id": {
+            "low": 781,
+            "high": 0
+          },
+          "community": {
+            "low": 0,
+            "high": 0
+          },
+          "title": "Goodfellas",
+          "poster_image": "http://image.tmdb.org/t/p/w185/pwpGfTImTGifEGgLb3s6LRPd4I6.jpg"
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 3326,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "duration": {
+            "low": 143,
+            "high": 0
+          },
+          "rated": "PG-13",
+          "summary": "placeholder text",
+          "tagline": "Some assembly required.",
+          "id": {
+            "low": 2055,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "title": "The Avengers",
+          "poster_image": "http://image.tmdb.org/t/p/w185/cezWGskPY5x7GaglTTRN4Fugfb8.jpg"
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 3318,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "duration": {
+            "low": 102,
+            "high": 0
+          },
+          "rated": "PG-13",
+          "summary": "placeholder text",
+          "tagline": "We've got the future under control.",
+          "id": {
+            "low": 1412,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "title": "RoboCop",
+          "poster_image": "http://image.tmdb.org/t/p/w185/hFQcC5eSSHqJfk70RdgrMMxGuYt.jpg"
+        }
+      },
+      "4": {
+        "identity": {
+          "low": 3291,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "summary": "placeholder text",
+          "duration": {
+            "low": 154,
+            "high": 0
+          },
+          "rated": "R",
+          "tagline": "Just because you are a character doesn't mean you have character.",
+          "id": {
+            "low": 82,
+            "high": 0
+          },
+          "community": {
+            "low": 4,
+            "high": 0
+          },
+          "title": "Pulp Fiction",
+          "poster_image": "http://image.tmdb.org/t/p/w185/dM2w364MScsjFf8pfMbaWUcWrR.jpg"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "0": {
+        "identity": {
+          "low": 5574,
+          "high": 0
+        },
+        "start": {
+          "low": 3382,
+          "high": 0
+        },
+        "end": {
+          "low": 3308,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Stacks Edwards"
+          ]
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 5576,
+          "high": 0
+        },
+        "start": {
+          "low": 3382,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Nick Fury"
+          ]
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 5575,
+          "high": 0
+        },
+        "start": {
+          "low": 3382,
+          "high": 0
+        },
+        "end": {
+          "low": 3318,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Pat Novak"
+          ]
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 5573,
+          "high": 0
+        },
+        "start": {
+          "low": 3382,
+          "high": 0
+        },
+        "end": {
+          "low": 3291,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Jules Winfield"
+          ]
+        }
+      }
+    }
+  ]
+}

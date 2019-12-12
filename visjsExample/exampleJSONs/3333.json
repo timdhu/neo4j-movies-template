@@ -1,0 +1,866 @@
+{
+  "nodes": [
+    {
+      "0": {
+        "identity": {
+          "low": 3333,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "duration": {
+            "low": 126,
+            "high": 0
+          },
+          "rated": "PG",
+          "summary": "placeholder text",
+          "tagline": "One of the most legendary directors of our time takes you on an extraordinary adventure.",
+          "id": {
+            "low": 2885,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "title": "Hugo",
+          "poster_image": "http://image.tmdb.org/t/p/w185/fkeaJr29ypea1n24gzspsc7qK44.jpg"
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 3572,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Christopher Lee",
+          "id": {
+            "low": 699,
+            "high": 0
+          },
+          "community": {
+            "low": 5,
+            "high": 0
+          },
+          "born": {
+            "low": 1922,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/7YwjaHLmuy1isK6oh3TnBDd6Oml.jpg"
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 3931,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Chloë Grace Moretz",
+          "id": {
+            "low": 2887,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1997,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 3935,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Michael Stuhlbarg",
+          "id": {
+            "low": 2891,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1968,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "4": {
+        "identity": {
+          "low": 3512,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Ben Kingsley",
+          "id": {
+            "low": 599,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1943,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "5": {
+        "identity": {
+          "low": 3895,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Ray Winstone",
+          "id": {
+            "low": 2499,
+            "high": 0
+          },
+          "community": {
+            "low": 22,
+            "high": 0
+          },
+          "born": {
+            "low": 1957,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "6": {
+        "identity": {
+          "low": 3934,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Helen McCrory",
+          "id": {
+            "low": 2890,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1968,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "7": {
+        "identity": {
+          "low": 3933,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Jude Law",
+          "id": {
+            "low": 2889,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1972,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "8": {
+        "identity": {
+          "low": 3930,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Asa Butterfield",
+          "id": {
+            "low": 2886,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1997,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "9": {
+        "identity": {
+          "low": 3937,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Frances de la Tour",
+          "id": {
+            "low": 2893,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1944,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/8PvwBlVzzS2sRSLlElRLNG7CYRE.jpg"
+        }
+      },
+      "10": {
+        "identity": {
+          "low": 3936,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Emily Mortimer",
+          "id": {
+            "low": 2892,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1971,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "11": {
+        "identity": {
+          "low": 3938,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Richard Griffiths",
+          "id": {
+            "low": 2894,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1947,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "12": {
+        "identity": {
+          "low": 3932,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Sacha Baron Cohen",
+          "id": {
+            "low": 2888,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1971,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "13": {
+        "identity": {
+          "low": 3631,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Martin Scorsese",
+          "id": {
+            "low": 791,
+            "high": 0
+          },
+          "community": {
+            "low": 0,
+            "high": 0
+          },
+          "born": {
+            "low": 1942,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "14": {
+        "identity": {
+          "low": 3939,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Johnny Depp",
+          "id": {
+            "low": 2895,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1963,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/5sc2pu4YWItxCaXSvrFpg64zN9J.jpg"
+        }
+      },
+      "15": {
+        "identity": {
+          "low": 16,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "Family",
+          "community": {
+            "low": 7,
+            "high": 0
+          },
+          "id": {
+            "low": 1258,
+            "high": 0
+          }
+        }
+      },
+      "16": {
+        "identity": {
+          "low": 6,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "Drama",
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "id": {
+            "low": 146,
+            "high": 0
+          }
+        }
+      },
+      "17": {
+        "identity": {
+          "low": 1,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "Adventure",
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "id": {
+            "low": 17,
+            "high": 0
+          }
+        }
+      },
+      "18": {
+        "identity": {
+          "low": 3940,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "John Logan",
+          "id": {
+            "low": 2896,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1000,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "19": {
+        "identity": {
+          "low": 3941,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Brian Selznick",
+          "id": {
+            "low": 2897,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1000,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "0": {
+        "identity": {
+          "low": 5817,
+          "high": 0
+        },
+        "start": {
+          "low": 3572,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Monsieur Labisse"
+          ]
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 6133,
+          "high": 0
+        },
+        "start": {
+          "low": 3931,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Isabelle"
+          ]
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 6137,
+          "high": 0
+        },
+        "start": {
+          "low": 3935,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Rene Rabard"
+          ]
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 5729,
+          "high": 0
+        },
+        "start": {
+          "low": 3512,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Georges Méliès"
+          ]
+        }
+      },
+      "4": {
+        "identity": {
+          "low": 6100,
+          "high": 0
+        },
+        "start": {
+          "low": 3895,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Uncle Claude"
+          ]
+        }
+      },
+      "5": {
+        "identity": {
+          "low": 6136,
+          "high": 0
+        },
+        "start": {
+          "low": 3934,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Mama Jeanne"
+          ]
+        }
+      },
+      "6": {
+        "identity": {
+          "low": 6135,
+          "high": 0
+        },
+        "start": {
+          "low": 3933,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Hugo's Father"
+          ]
+        }
+      },
+      "7": {
+        "identity": {
+          "low": 6132,
+          "high": 0
+        },
+        "start": {
+          "low": 3930,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Hugo Cabret"
+          ]
+        }
+      },
+      "8": {
+        "identity": {
+          "low": 6139,
+          "high": 0
+        },
+        "start": {
+          "low": 3937,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Madame Emilie"
+          ]
+        }
+      },
+      "9": {
+        "identity": {
+          "low": 6138,
+          "high": 0
+        },
+        "start": {
+          "low": 3936,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Lisette"
+          ]
+        }
+      },
+      "10": {
+        "identity": {
+          "low": 6140,
+          "high": 0
+        },
+        "start": {
+          "low": 3938,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Monsieur Frick"
+          ]
+        }
+      },
+      "11": {
+        "identity": {
+          "low": 6134,
+          "high": 0
+        },
+        "start": {
+          "low": 3932,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "The Station Inspector"
+          ]
+        }
+      },
+      "12": {
+        "identity": {
+          "low": 5475,
+          "high": 0
+        },
+        "start": {
+          "low": 3631,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "DIRECTED",
+        "properties": {}
+      },
+      "13": {
+        "identity": {
+          "low": 5421,
+          "high": 0
+        },
+        "start": {
+          "low": 3631,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "PRODUCED",
+        "properties": {}
+      },
+      "14": {
+        "identity": {
+          "low": 5440,
+          "high": 0
+        },
+        "start": {
+          "low": 3939,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "PRODUCED",
+        "properties": {}
+      },
+      "15": {
+        "identity": {
+          "low": 135,
+          "high": 0
+        },
+        "start": {
+          "low": 3333,
+          "high": 0
+        },
+        "end": {
+          "low": 16,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      },
+      "16": {
+        "identity": {
+          "low": 133,
+          "high": 0
+        },
+        "start": {
+          "low": 3333,
+          "high": 0
+        },
+        "end": {
+          "low": 6,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      },
+      "17": {
+        "identity": {
+          "low": 134,
+          "high": 0
+        },
+        "start": {
+          "low": 3333,
+          "high": 0
+        },
+        "end": {
+          "low": 1,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      },
+      "18": {
+        "identity": {
+          "low": 5375,
+          "high": 0
+        },
+        "start": {
+          "low": 3940,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "WRITER_OF",
+        "properties": {}
+      },
+      "19": {
+        "identity": {
+          "low": 5376,
+          "high": 0
+        },
+        "start": {
+          "low": 3941,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "WRITER_OF",
+        "properties": {}
+      }
+    }
+  ]
+}

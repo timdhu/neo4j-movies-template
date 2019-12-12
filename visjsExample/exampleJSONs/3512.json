@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "0": {
+        "identity": {
+          "low": 3512,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Ben Kingsley",
+          "id": {
+            "low": 599,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1943,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 3299,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "rated": "R",
+          "summary": "placeholder text",
+          "duration": {
+            "low": 195,
+            "high": 0
+          },
+          "tagline": "Whoever saves one life\\, saves the world entire.",
+          "id": {
+            "low": 598,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "title": "Schindler's List",
+          "poster_image": "http://image.tmdb.org/t/p/w185/tvOvW7Qjj63zbQW5TZ8CjPThAUd.jpg"
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 3333,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "duration": {
+            "low": 126,
+            "high": 0
+          },
+          "rated": "PG",
+          "summary": "placeholder text",
+          "tagline": "One of the most legendary directors of our time takes you on an extraordinary adventure.",
+          "id": {
+            "low": 2885,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "title": "Hugo",
+          "poster_image": "http://image.tmdb.org/t/p/w185/fkeaJr29ypea1n24gzspsc7qK44.jpg"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "0": {
+        "identity": {
+          "low": 5728,
+          "high": 0
+        },
+        "start": {
+          "low": 3512,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Itzhak Stern"
+          ]
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 5729,
+          "high": 0
+        },
+        "start": {
+          "low": 3512,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Georges Méliès"
+          ]
+        }
+      }
+    }
+  ]
+}

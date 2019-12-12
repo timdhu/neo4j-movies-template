@@ -1,0 +1,690 @@
+{
+  "nodes": [
+    {
+      "0": {
+        "identity": {
+          "low": 3299,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "rated": "R",
+          "summary": "placeholder text",
+          "duration": {
+            "low": 195,
+            "high": 0
+          },
+          "tagline": "Whoever saves one life\\, saves the world entire.",
+          "id": {
+            "low": 598,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "title": "Schindler's List",
+          "poster_image": "http://image.tmdb.org/t/p/w185/tvOvW7Qjj63zbQW5TZ8CjPThAUd.jpg"
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 3512,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Ben Kingsley",
+          "id": {
+            "low": 599,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1943,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 3515,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Embeth Davidtz",
+          "id": {
+            "low": 602,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1965,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 3517,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Friedrich von Thun",
+          "id": {
+            "low": 604,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1942,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "4": {
+        "identity": {
+          "low": 3513,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Ralph Fiennes",
+          "id": {
+            "low": 600,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1962,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "5": {
+        "identity": {
+          "low": 3507,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Liam Neeson",
+          "id": {
+            "low": 576,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1952,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/oxCCVmDSxWcqIyMknRoOAZkvb6D.jpg"
+        }
+      },
+      "6": {
+        "identity": {
+          "low": 3516,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Andrzej Seweryn",
+          "id": {
+            "low": 603,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1946,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "7": {
+        "identity": {
+          "low": 3514,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Caroline Goodall",
+          "id": {
+            "low": 601,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1959,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "8": {
+        "identity": {
+          "low": 3518,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Krzysztof Luft",
+          "id": {
+            "low": 605,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1958,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "9": {
+        "identity": {
+          "low": 3519,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Michael Gordon",
+          "id": {
+            "low": 606,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1909,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "10": {
+        "identity": {
+          "low": 3520,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Steven Spielberg",
+          "id": {
+            "low": 607,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1946,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/pOK15UNaw75Bzj7BQO1ulehbPPm.jpg"
+        }
+      },
+      "11": {
+        "identity": {
+          "low": 3522,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Gerald R. Molen",
+          "id": {
+            "low": 609,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1935,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "12": {
+        "identity": {
+          "low": 3521,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Steven Zaillian",
+          "id": {
+            "low": 608,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1953,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "13": {
+        "identity": {
+          "low": 9,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "War",
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "id": {
+            "low": 611,
+            "high": 0
+          }
+        }
+      },
+      "14": {
+        "identity": {
+          "low": 8,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "History",
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "id": {
+            "low": 610,
+            "high": 0
+          }
+        }
+      },
+      "15": {
+        "identity": {
+          "low": 6,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "Drama",
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "id": {
+            "low": 146,
+            "high": 0
+          }
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "0": {
+        "identity": {
+          "low": 5728,
+          "high": 0
+        },
+        "start": {
+          "low": 3512,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Itzhak Stern"
+          ]
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 5732,
+          "high": 0
+        },
+        "start": {
+          "low": 3515,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Helen Hirsch"
+          ]
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 5734,
+          "high": 0
+        },
+        "start": {
+          "low": 3517,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Rolf Czurda"
+          ]
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 5730,
+          "high": 0
+        },
+        "start": {
+          "low": 3513,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Amon Goeth"
+          ]
+        }
+      },
+      "4": {
+        "identity": {
+          "low": 5721,
+          "high": 0
+        },
+        "start": {
+          "low": 3507,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Oskar Schindler"
+          ]
+        }
+      },
+      "5": {
+        "identity": {
+          "low": 5733,
+          "high": 0
+        },
+        "start": {
+          "low": 3516,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Julian Scherner"
+          ]
+        }
+      },
+      "6": {
+        "identity": {
+          "low": 5731,
+          "high": 0
+        },
+        "start": {
+          "low": 3514,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Emilie Schindler"
+          ]
+        }
+      },
+      "7": {
+        "identity": {
+          "low": 5735,
+          "high": 0
+        },
+        "start": {
+          "low": 3518,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Herman Toffel"
+          ]
+        }
+      },
+      "8": {
+        "identity": {
+          "low": 5736,
+          "high": 0
+        },
+        "start": {
+          "low": 3519,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Mr. Nussbaum"
+          ]
+        }
+      },
+      "9": {
+        "identity": {
+          "low": 5463,
+          "high": 0
+        },
+        "start": {
+          "low": 3520,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "DIRECTED",
+        "properties": {}
+      },
+      "10": {
+        "identity": {
+          "low": 5401,
+          "high": 0
+        },
+        "start": {
+          "low": 3522,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "PRODUCED",
+        "properties": {}
+      },
+      "11": {
+        "identity": {
+          "low": 5400,
+          "high": 0
+        },
+        "start": {
+          "low": 3520,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "PRODUCED",
+        "properties": {}
+      },
+      "12": {
+        "identity": {
+          "low": 5306,
+          "high": 0
+        },
+        "start": {
+          "low": 3521,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "WRITER_OF",
+        "properties": {}
+      },
+      "13": {
+        "identity": {
+          "low": 33,
+          "high": 0
+        },
+        "start": {
+          "low": 3299,
+          "high": 0
+        },
+        "end": {
+          "low": 9,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      },
+      "14": {
+        "identity": {
+          "low": 32,
+          "high": 0
+        },
+        "start": {
+          "low": 3299,
+          "high": 0
+        },
+        "end": {
+          "low": 8,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      },
+      "15": {
+        "identity": {
+          "low": 31,
+          "high": 0
+        },
+        "start": {
+          "low": 3299,
+          "high": 0
+        },
+        "end": {
+          "low": 6,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      }
+    }
+  ]
+}

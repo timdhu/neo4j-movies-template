@@ -33,7 +33,7 @@ var Cypher_Queries = require('../models/cypher_queries')
   *                   properties:
   *                     low: integer
   *                     high: integer
-  *       relationships:
+  *       edges:
   *         type: array
   *         items:
   *           type: object
@@ -148,7 +148,7 @@ exports.findNodeByID = function (req, res, next) {
  *         description: label of node
  *         in: path
  *         required: true
- *         type: integer
+ *         type: string
  *     responses:
  *       200:
  *         description: A node
@@ -165,7 +165,7 @@ exports.findNodeByIDandLabel= function (req, res, next) {
 
 /**
  * @swagger
- * /api/v0/nodes/neighbours/{nodeLabel}/{id}:
+ * /api/v0/nodes/neighbours/{nodeLabel}/{id}/{edgeList}:
  *   get:
  *     tags:
  *     - nodes
@@ -184,9 +184,19 @@ exports.findNodeByIDandLabel= function (req, res, next) {
  *         in: path
  *         required: true
  *         type: integer
+ *       - name: edgeList
+ *         description: array of edges allowed in query
+ *         in: path
+ *         required: false
+ *         schema:
+ *           type: array
+ *           items:
+ *             type: string
+ *         style: matrix
+ *         explode: true
  *     responses:
  *       200:
- *         description: All nodes and their relationships with start node
+ *         description: All nodes and their edges with start node
  *         schema:
  *           $ref: '#/definitions/Output'
  *       404:
@@ -194,16 +204,17 @@ exports.findNodeByIDandLabel= function (req, res, next) {
  */
 exports.findAllOneDistNeighbours = function (req, res, next) {
   var id = req.params.id;
+  var edgeList = req.params.edgeList;
   if (!id) throw {message: 'Invalid id', status: 400};
 
-  Cypher_Queries.getAllOneDistNeighbours(dbUtils.getSession(req), req.params.nodeLabel, id)
+  Cypher_Queries.getAllOneDistNeighbours(dbUtils.getSession(req), req.params.nodeLabel, id, edgeList)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
 
 /**
  * @swagger
- * /api/v0/nodes/neighbours/{nodeLabel}/{id}/{neighbourLabel}:
+ * /api/v0/nodes/neighbours/{nodeLabel}/{id}/{neighbourLabel}/{edgeList}:
  *   get:
  *     tags:
  *     - nodes
@@ -227,9 +238,19 @@ exports.findAllOneDistNeighbours = function (req, res, next) {
  *         in: path
  *         required: true
  *         type: string
+ *       - name: edgeList
+ *         description: array of edges allowed in query
+ *         in: path
+ *         required: false
+ *         schema:
+ *           type: array
+ *           items:
+ *             type: string
+ *         style: matrix
+ *         explode: true
  *     responses:
  *       200:
- *         description: All nodes of a given label and their relationships with start node
+ *         description: All nodes of a given label and their edges with start node
  *         schema:
  *           $ref: '#/definitions/Output'
  *       404:
@@ -237,8 +258,9 @@ exports.findAllOneDistNeighbours = function (req, res, next) {
  */
 exports.findAllOneDistNeighboursByType = function (req, res, next) {
   var id = req.params.id;
+  var edgeList = req.params.edgeList;
   if (!id) throw {message: 'Invalid id', status: 400};
-  Cypher_Queries.getAllOneDistNeighboursByType(dbUtils.getSession(req), req.params.nodeLabel, id, req.params.neighbourLabel)
+  Cypher_Queries.getAllOneDistNeighboursByType(dbUtils.getSession(req), req.params.nodeLabel, id, req.params.neighbourLabel, edgeList)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
@@ -246,7 +268,7 @@ exports.findAllOneDistNeighboursByType = function (req, res, next) {
 
 /**
  * @swagger
- * /api/v0/nodes/neighbours2/{nodeLabel}/{id}:
+ * /api/v0/nodes/neighbours2/{nodeLabel}/{id}/{edgeList}:
  *   get:
  *     tags:
  *     - nodes
@@ -265,9 +287,19 @@ exports.findAllOneDistNeighboursByType = function (req, res, next) {
  *         in: path
  *         required: true
  *         type: integer
+ *       - name: edgeList
+ *         description: array of edges allowed in query
+ *         in: path
+ *         required: false
+ *         schema:
+ *           type: array
+ *           items:
+ *             type: string
+ *         style: matrix
+ *         explode: true
  *     responses:
  *       200:
- *         description: All nodes and their relationships with start node
+ *         description: All nodes and their edges with start node
  *         schema:
  *           $ref: '#/definitions/Output'
  *       404:
@@ -275,9 +307,10 @@ exports.findAllOneDistNeighboursByType = function (req, res, next) {
  */
 exports.findAllTwoDistNeighbours = function (req, res, next) {
   var id = req.params.id;
+  var edgeList = req.params.edgeList;
   if (!id) throw {message: 'Invalid id', status: 400};
 
-  Cypher_Queries.getAllTwoDistNeighbours(dbUtils.getSession(req), req.params.nodeLabel, id)
+  Cypher_Queries.getAllTwoDistNeighbours(dbUtils.getSession(req), req.params.nodeLabel, id, edgeList)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
@@ -382,7 +415,7 @@ exports.findByStringMatch = function (req, res, next) {
 
 /**
  * @swagger
- * /api/v0/nodes/shortestPath/{startLabel}/{startID}/{endLabel}/{endID}/{relationshipList}:
+ * /api/v0/nodes/shortestPath/{startLabel}/{startID}/{endLabel}/{endID}/{edgeList}:
  *   get:
  *     tags:
  *     - nodes
@@ -411,8 +444,8 @@ exports.findByStringMatch = function (req, res, next) {
  *         in: path
  *         required: true
  *         type: integer
- *       - name: relationshipList
- *         description: array of relationships allowed in query
+ *       - name: edgeList
+ *         description: array of edges allowed in query
  *         in: path
  *         required: false
  *         schema:
@@ -423,7 +456,7 @@ exports.findByStringMatch = function (req, res, next) {
  *         explode: true
  *     responses:
  *       200:
- *         description: A list of nodes and relationships
+ *         description: A list of nodes and edges
  *         schema:
  *           type: array
  *           items:
@@ -432,10 +465,10 @@ exports.findByStringMatch = function (req, res, next) {
 exports.findShortestPath = function (req, res, next) {
   var startID = req.params.startID;
   var endID = req.params.endID;
-  var relationshipList = req.params.relationshipList;
+  var edgeList = req.params.edgeList;
   if (!startID) throw {message: 'Invalid id', status: 400};
   if (!endID) throw {message: 'Invalid id', status: 400};
-  Cypher_Queries.getShortestPath(dbUtils.getSession(req), req.params.startLabel, startID, req.params.endLabel, endID, relationshipList)
+  Cypher_Queries.getShortestPath(dbUtils.getSession(req), req.params.startLabel, startID, req.params.endLabel, endID, edgeList)
     .then(response => writeResponse(res, response))
     .catch(next);
 };
@@ -483,7 +516,7 @@ exports.findShortestPath = function (req, res, next) {
  *         type: string
  *     responses:
  *       200:
- *         description: A list of nodes and relationships
+ *         description: A list of nodes and edges
  *         schema:
  *           type: array
  *           items:
@@ -506,8 +539,8 @@ exports.findShortestPathWithProperties = function (req, res, next) {
  *   get:
  *     tags:
  *     - nodes
- *     description: Find all nodes and relationships by community ID
- *     summary: Find all nodes and relationships by community ID
+ *     description: Find all nodes and edges by community ID
+ *     summary: Find all nodes and edges by community ID
  *     produces:
  *       - application/json
  *     parameters:
@@ -518,14 +551,13 @@ exports.findShortestPathWithProperties = function (req, res, next) {
  *         type: integer
  *     responses:
  *       200:
- *         description: Nodes and relationships in the community
+ *         description: Nodes and edges in the community
  *         schema:
  *           $ref: '#/definitions/Output'
  *       404:
  *         description: node not found
  */
 exports.findCommunity= function (req, res, next) {
-  console.log(req.params)
   Cypher_Queries.getCommunity(dbUtils.getSession(req), req.params.communityID)
     .then(response => writeResponse(res, response))
     .catch(next);

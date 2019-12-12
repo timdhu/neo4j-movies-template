@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "0": {
+        "identity": {
+          "low": 3931,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Chloë Grace Moretz",
+          "id": {
+            "low": 2887,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "born": {
+            "low": 1997,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 3333,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "duration": {
+            "low": 126,
+            "high": 0
+          },
+          "rated": "PG",
+          "summary": "placeholder text",
+          "tagline": "One of the most legendary directors of our time takes you on an extraordinary adventure.",
+          "id": {
+            "low": 2885,
+            "high": 0
+          },
+          "community": {
+            "low": 23,
+            "high": 0
+          },
+          "title": "Hugo",
+          "poster_image": "http://image.tmdb.org/t/p/w185/fkeaJr29ypea1n24gzspsc7qK44.jpg"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "0": {
+        "identity": {
+          "low": 6133,
+          "high": 0
+        },
+        "start": {
+          "low": 3931,
+          "high": 0
+        },
+        "end": {
+          "low": 3333,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Isabelle"
+          ]
+        }
+      }
+    }
+  ]
+}

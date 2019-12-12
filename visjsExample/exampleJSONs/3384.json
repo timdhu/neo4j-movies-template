@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "0": {
+        "identity": {
+          "low": 3384,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Uma Thurman",
+          "id": {
+            "low": 87,
+            "high": 0
+          },
+          "community": {
+            "low": 4,
+            "high": 0
+          },
+          "born": {
+            "low": 1970,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 3291,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "summary": "placeholder text",
+          "duration": {
+            "low": 154,
+            "high": 0
+          },
+          "rated": "R",
+          "tagline": "Just because you are a character doesn't mean you have character.",
+          "id": {
+            "low": 82,
+            "high": 0
+          },
+          "community": {
+            "low": 4,
+            "high": 0
+          },
+          "title": "Pulp Fiction",
+          "poster_image": "http://image.tmdb.org/t/p/w185/dM2w364MScsjFf8pfMbaWUcWrR.jpg"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "0": {
+        "identity": {
+          "low": 5578,
+          "high": 0
+        },
+        "start": {
+          "low": 3384,
+          "high": 0
+        },
+        "end": {
+          "low": 3291,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Mia Wallace"
+          ]
+        }
+      }
+    }
+  ]
+}

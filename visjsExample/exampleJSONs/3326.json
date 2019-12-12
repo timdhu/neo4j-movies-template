@@ -1,0 +1,1265 @@
+{
+  "nodes": [
+    {
+      "0": {
+        "identity": {
+          "low": 3326,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "duration": {
+            "low": 143,
+            "high": 0
+          },
+          "rated": "PG-13",
+          "summary": "placeholder text",
+          "tagline": "Some assembly required.",
+          "id": {
+            "low": 2055,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "title": "The Avengers",
+          "poster_image": "http://image.tmdb.org/t/p/w185/cezWGskPY5x7GaglTTRN4Fugfb8.jpg"
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 3841,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Enver Gjokaj",
+          "id": {
+            "low": 2072,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1980,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 3830,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Clark Gregg",
+          "id": {
+            "low": 2061,
+            "high": 0
+          },
+          "community": {
+            "low": 13,
+            "high": 0
+          },
+          "born": {
+            "low": 1962,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 3837,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Stan Lee",
+          "id": {
+            "low": 2068,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1922,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "4": {
+        "identity": {
+          "low": 3737,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Scarlett Johansson",
+          "id": {
+            "low": 1552,
+            "high": 0
+          },
+          "community": {
+            "low": 6,
+            "high": 0
+          },
+          "born": {
+            "low": 1984,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "5": {
+        "identity": {
+          "low": 3826,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Chris Evans",
+          "id": {
+            "low": 2057,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1981,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "6": {
+        "identity": {
+          "low": 3666,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Jeremy Renner",
+          "id": {
+            "low": 1121,
+            "high": 0
+          },
+          "community": {
+            "low": 14,
+            "high": 0
+          },
+          "born": {
+            "low": 1971,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "7": {
+        "identity": {
+          "low": 3838,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Ashley Johnson",
+          "id": {
+            "low": 2069,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1983,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "8": {
+        "identity": {
+          "low": 3839,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Jerzy Skolimowski",
+          "id": {
+            "low": 2070,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1938,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "9": {
+        "identity": {
+          "low": 3382,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Samuel L. Jackson",
+          "id": {
+            "low": 85,
+            "high": 0
+          },
+          "community": {
+            "low": 0,
+            "high": 0
+          },
+          "born": {
+            "low": 1948,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/dlW6prW9HwYDsIRXNoFYtyHpSny.jpg"
+        }
+      },
+      "10": {
+        "identity": {
+          "low": 3832,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Gwyneth Paltrow",
+          "id": {
+            "low": 2063,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1972,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "11": {
+        "identity": {
+          "low": 3831,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Stellan Skarsgård",
+          "id": {
+            "low": 2062,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1951,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "12": {
+        "identity": {
+          "low": 3836,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Powers Boothe",
+          "id": {
+            "low": 2067,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1948,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "13": {
+        "identity": {
+          "low": 3709,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Cobie Smulders",
+          "id": {
+            "low": 1367,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "born": {
+            "low": 1982,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "14": {
+        "identity": {
+          "low": 3835,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Walter Perez",
+          "id": {
+            "low": 2066,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1982,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "15": {
+        "identity": {
+          "low": 3828,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Chris Hemsworth",
+          "id": {
+            "low": 2059,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1983,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "16": {
+        "identity": {
+          "low": 3833,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Paul Bettany",
+          "id": {
+            "low": 2064,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1971,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "17": {
+        "identity": {
+          "low": 3834,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Jenny Agutter",
+          "id": {
+            "low": 2065,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1952,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "18": {
+        "identity": {
+          "low": 3825,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Robert Downey Jr.",
+          "id": {
+            "low": 2056,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1965,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "19": {
+        "identity": {
+          "low": 3827,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Mark Ruffalo",
+          "id": {
+            "low": 2058,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1967,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "20": {
+        "identity": {
+          "low": 3465,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Harry Dean Stanton",
+          "id": {
+            "low": 508,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1926,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/nDSav6v9Z8dSJSXoooT2g0LjbCd.jpg"
+        }
+      },
+      "21": {
+        "identity": {
+          "low": 3840,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "James Eckhouse",
+          "id": {
+            "low": 2071,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1955,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "22": {
+        "identity": {
+          "low": 3829,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Tom Hiddleston",
+          "id": {
+            "low": 2060,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1981,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "23": {
+        "identity": {
+          "low": 3842,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Joss Whedon",
+          "id": {
+            "low": 2073,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1964,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "24": {
+        "identity": {
+          "low": 3843,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Jon Favreau",
+          "id": {
+            "low": 2074,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1966,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "25": {
+        "identity": {
+          "low": 3844,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Kevin Feige",
+          "id": {
+            "low": 2075,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1000,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      },
+      "26": {
+        "identity": {
+          "low": 0,
+          "high": 0
+        },
+        "labels": [
+          "Genre"
+        ],
+        "properties": {
+          "name": "Action",
+          "community": {
+            "low": 0,
+            "high": 0
+          },
+          "id": {
+            "low": 16,
+            "high": 0
+          }
+        }
+      },
+      "27": {
+        "identity": {
+          "low": 3845,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Zak Penn",
+          "id": {
+            "low": 2076,
+            "high": 0
+          },
+          "community": {
+            "low": 18,
+            "high": 0
+          },
+          "born": {
+            "low": 1000,
+            "high": 0
+          },
+          "poster_image": "https://assets.tmdb.org/assets/7f29bd8b3370c71dd379b0e8b570887c/images/no-poster-w185-v2.png"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "0": {
+        "identity": {
+          "low": 6061,
+          "high": 0
+        },
+        "start": {
+          "low": 3841,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Young Cop"
+          ]
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 6049,
+          "high": 0
+        },
+        "start": {
+          "low": 3830,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Agent Phil Coulson"
+          ]
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 6057,
+          "high": 0
+        },
+        "start": {
+          "low": 3837,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Old Man in TV Report"
+          ]
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 5970,
+          "high": 0
+        },
+        "start": {
+          "low": 3737,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Natasha Romanoff ",
+            " Black Widow"
+          ]
+        }
+      },
+      "4": {
+        "identity": {
+          "low": 6045,
+          "high": 0
+        },
+        "start": {
+          "low": 3826,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Steve Rogers ",
+            " Captain America"
+          ]
+        }
+      },
+      "5": {
+        "identity": {
+          "low": 5908,
+          "high": 0
+        },
+        "start": {
+          "low": 3666,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Clint Barton ",
+            " Hawkeye"
+          ]
+        }
+      },
+      "6": {
+        "identity": {
+          "low": 6058,
+          "high": 0
+        },
+        "start": {
+          "low": 3838,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Waitress"
+          ]
+        }
+      },
+      "7": {
+        "identity": {
+          "low": 6059,
+          "high": 0
+        },
+        "start": {
+          "low": 3839,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Georgi Luchkov"
+          ]
+        }
+      },
+      "8": {
+        "identity": {
+          "low": 5576,
+          "high": 0
+        },
+        "start": {
+          "low": 3382,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Nick Fury"
+          ]
+        }
+      },
+      "9": {
+        "identity": {
+          "low": 6052,
+          "high": 0
+        },
+        "start": {
+          "low": 3832,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Pepper Potts"
+          ]
+        }
+      },
+      "10": {
+        "identity": {
+          "low": 6051,
+          "high": 0
+        },
+        "start": {
+          "low": 3831,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Selvig"
+          ]
+        }
+      },
+      "11": {
+        "identity": {
+          "low": 6056,
+          "high": 0
+        },
+        "start": {
+          "low": 3836,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "World Security Council"
+          ]
+        }
+      },
+      "12": {
+        "identity": {
+          "low": 5946,
+          "high": 0
+        },
+        "start": {
+          "low": 3709,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Agent Maria Hill"
+          ]
+        }
+      },
+      "13": {
+        "identity": {
+          "low": 6055,
+          "high": 0
+        },
+        "start": {
+          "low": 3835,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Shield Pilot"
+          ]
+        }
+      },
+      "14": {
+        "identity": {
+          "low": 6047,
+          "high": 0
+        },
+        "start": {
+          "low": 3828,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Thor"
+          ]
+        }
+      },
+      "15": {
+        "identity": {
+          "low": 6053,
+          "high": 0
+        },
+        "start": {
+          "low": 3833,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Jarvis (voice)"
+          ]
+        }
+      },
+      "16": {
+        "identity": {
+          "low": 6054,
+          "high": 0
+        },
+        "start": {
+          "low": 3834,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "World Security Council"
+          ]
+        }
+      },
+      "17": {
+        "identity": {
+          "low": 6044,
+          "high": 0
+        },
+        "start": {
+          "low": 3825,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Tony Stark ",
+            " Iron Man"
+          ]
+        }
+      },
+      "18": {
+        "identity": {
+          "low": 6046,
+          "high": 0
+        },
+        "start": {
+          "low": 3827,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Bruce Banner ",
+            " The Hulk"
+          ]
+        }
+      },
+      "19": {
+        "identity": {
+          "low": 5671,
+          "high": 0
+        },
+        "start": {
+          "low": 3465,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Security Guard"
+          ]
+        }
+      },
+      "20": {
+        "identity": {
+          "low": 6060,
+          "high": 0
+        },
+        "start": {
+          "low": 3840,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Senator Boynton"
+          ]
+        }
+      },
+      "21": {
+        "identity": {
+          "low": 6048,
+          "high": 0
+        },
+        "start": {
+          "low": 3829,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Loki"
+          ]
+        }
+      },
+      "22": {
+        "identity": {
+          "low": 5494,
+          "high": 0
+        },
+        "start": {
+          "low": 3842,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "DIRECTED",
+        "properties": {}
+      },
+      "23": {
+        "identity": {
+          "low": 5435,
+          "high": 0
+        },
+        "start": {
+          "low": 3843,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "PRODUCED",
+        "properties": {}
+      },
+      "24": {
+        "identity": {
+          "low": 5434,
+          "high": 0
+        },
+        "start": {
+          "low": 3837,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "PRODUCED",
+        "properties": {}
+      },
+      "25": {
+        "identity": {
+          "low": 5436,
+          "high": 0
+        },
+        "start": {
+          "low": 3844,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "PRODUCED",
+        "properties": {}
+      },
+      "26": {
+        "identity": {
+          "low": 113,
+          "high": 0
+        },
+        "start": {
+          "low": 3326,
+          "high": 0
+        },
+        "end": {
+          "low": 0,
+          "high": 0
+        },
+        "type": "HAS_GENRE",
+        "properties": {}
+      },
+      "27": {
+        "identity": {
+          "low": 5363,
+          "high": 0
+        },
+        "start": {
+          "low": 3845,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "WRITER_OF",
+        "properties": {}
+      },
+      "28": {
+        "identity": {
+          "low": 5362,
+          "high": 0
+        },
+        "start": {
+          "low": 3842,
+          "high": 0
+        },
+        "end": {
+          "low": 3326,
+          "high": 0
+        },
+        "type": "WRITER_OF",
+        "properties": {}
+      }
+    }
+  ]
+}

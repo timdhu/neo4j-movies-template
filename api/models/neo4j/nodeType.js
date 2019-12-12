@@ -4,51 +4,32 @@
 var _ = require('lodash');
 
 var NodeType = module.exports = function (_node) {
-  _.extend(this, _node);
-  // Construct an ID for each of the nodes
-  if (this.identity) {
-    this.id = this.identity.toInt();
-  };
+  // _.extend(this, _node);
+  // Convert all Neo4j numbers to numbers in javascript
+  _node.map(r => {
+    if (r.identity) {r.identity= r.identity.toInt()};
+    if (r.properties) {
 
-  // Properties that are on all nodes
-  if (this.properties) {
-    if (this.properties.community) {
-      this.properties.community = this.properties.community.toNumber();
+      // properties for new database
+      if (r.properties.community) {r.properties.community = r.properties.community.toInt()};
+      if (r.properties.pagerank) {r.properties.pagerank = r.properties.pagerank.toNumber()};
+      if (r.properties.nearest_powerline_distance_km) {r.properties.nearest_powerline_distance_km = r.properties.nearest_powerline_distance_km.toNumber()};
+      if (r.properties.age_years) {r.properties.age_years = r.properties.age_years.toNumber()};
+      if (r.properties.lon) {r.properties.lon = r.properties.lon.toNumber()};
+      if (r.properties.lat) {r.properties.lat = r.properties.lat.toNumber()};
+      if (r.properties.depth_meters) {r.properties.depth_meters = r.properties.depth_meters.toNumber()};
+      if (r.properties.year_of_commissioning) {r.properties.year_of_commissioning = r.properties.year_of_commissioning.toNumber()};
+      if (r.properties.value_usd) {r.properties.value_usd = r.properties.value_usd.toNumber()};
+      if (r.properties.employee_count) {r.properties.employee_count = r.properties.employee_count.toNumber()};
+      if (r.properties.market_capitalization_usd) {r.properties.market_capitalization_usd = r.properties.market_capitalization_usd.toNumber()};
+
+      // properties for movie database
+      if (r.properties.born) {r.properties.born = r.properties.born.toNumber()};
+      if (r.properties.id) {r.properties.id = r.properties.id.toNumber()};
+      if (r.properties.duration) {r.properties.duration = r.properties.duration.toNumber()};
+
     };
+  })
 
-    if (this.properties.pagerank) {
-      this.properties.pagerank = this.properties.pagerank.toNumber();
-    };
-
-    // Properties on asset nodes
-    if (this.properties.nearest_powerline_distance_km) {
-      this.properties.nearest_powerline_distance_km = this.properties.nearest_powerline_distance_km.toNumber();
-    }
-    if (this.properties.age_years) {
-      this.properties.age_years = this.properties.age_years.toNumber();
-    }
-    if (this.properties.lon) {
-      this.properties.lon = this.properties.lon.toNumber();
-    }
-    if (this.properties.lat) {
-      this.properties.lat = this.properties.lat.toNumber();
-    }
-    if (this.properties.depth_meters) {
-      this.properties.depth_meters = this.properties.depth_meters.toNumber();
-    }
-    if (this.properties.year_of_commissioning) {
-      this.properties.year_of_commissioning = this.properties.year_of_commissioning.toNumber();
-    }
-    if (this.properties.value_usd) {
-      this.properties.value_usd = this.properties.value_usd.toNumber();
-    }
-    if (this.properties.employee_count) {
-      this.properties.employee_count = this.properties.employee_count.toNumber();
-    }
-
-    // Properties on company Nodes
-    if (this.properties.market_capitalization_usd) {
-      this.properties.market_capitalization_usd = this.properties.market_capitalization_usd.toNumber();
-    };
-  };
+  return _node
 };

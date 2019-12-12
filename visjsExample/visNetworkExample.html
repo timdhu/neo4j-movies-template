@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://kenedict.com/networks/worldcup14/vis/ , thanks Andre!-->
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF8">
+  <title>Vis Network | Data | Importing from Gephi (JSON)</title>
+
+  <meta name="example-screenshot-selector" content="body" />
+
+    <script type="text/javascript" src="exampleUtil.js"></script>
+
+    <script type="text/javascript" src="parseNeo4jJSON.js"></script>
+
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+  <style type="text/css">
+    #mynetwork {
+      width: 800px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+
+    div.nodeContent {
+      position: relative;
+      border: 1px solid lightgray;
+      width: 480px;
+      height: 780px;
+      margin-top: -802px;
+      margin-left: 810px;
+      padding: 10px;
+    }
+
+    pre {
+      padding: 5px;
+      margin: 5px;
+    }
+
+    .string {
+      color: green;
+    }
+
+    .number {
+      color: darkorange;
+    }
+
+    .boolean {
+      color: blue;
+    }
+
+    .null {
+      color: magenta;
+    }
+
+    .key {
+      color: red;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<h2>Dynamic Data - Importing from Gephi (JSON)</h2>
+
+<div style="width:700px; font-size:14px; text-align: justify;">
+  Time to draw graphs!
+  <br/>
+</div>
+
+<p>
+  <label><input type="checkbox" id="fixed" checked="checked"/> Fix in place after import.</label><br>
+  <label><input type="checkbox" id="parseColor"/> Parse the color instead of
+    copy (adds borders, highlights etc.)</label>
+</p>
+
+<div id="mynetwork"></div>
+<div class="nodeContent"><h4>Node Content:</h4>
+  <pre id="nodeContent"></pre>
+</div>
+
+<script type="text/javascript">
+  var network;
+
+  var nodes = new vis.DataSet();
+  var edges = new vis.DataSet();
+  var gephiImported;
+  var fixedCheckbox = document.getElementById('fixed');
+  fixedCheckbox.onchange = redrawAll;
+
+  var parseColorCheckbox = document.getElementById('parseColor');
+  parseColorCheckbox.onchange = redrawAll;
+
+  var nodeContent = document.getElementById('nodeContent');
+  loadJSON("http://localhost:3000/api/v0/nodes/neighbours/Person/3353/{edgeList}", redrawAll, function(err) {console.log('error')});
+
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+    nodes: {
+      shape: 'circle',
+      font: {
+        face: 'Tahoma'
+      }
+    },
+
+    edges: {
+      width: 0.15,
+      color: {
+        color: "#838988"
+      }
+    },
+    interaction: {
+      tooltipDelay: 200,
+      hideEdgesOnDrag: true
+    },
+    physics: {
+      stabilization: false,
+      barnesHut: {
+        gravitationalConstant: -10000,
+        springConstant: 0.002,
+        springLength: 100
+      }
+    }
+  };
+
+  network = new vis.Network(container, data, options);
+  network.on('click', function (params) {
+    if (params.nodes.length > 0) {
+      var data = nodes.get(params.nodes[0]); // get the data from selected node
+
+      nodeContent.innerHTML = JSON.stringify(data, undefined, 3); // show the data in the div
+    }
+  })
+
+  /**
+   * This function fills the DataSets. These DataSets will update the network.
+   */
+  function redrawAll(gephiJSON) {
+    if (gephiJSON.nodes === undefined) {
+      gephiJSON = gephiImported;
+    }
+    else {
+      gephiImported = gephiJSON;
+    }
+
+    nodes.clear();
+    edges.clear();
+
+    var fixed = fixedCheckbox.checked;
+    var parseColor = parseColorCheckbox.checked;
+
+    parseOptions = {
+      nodes: {label:'properties.name'}
+    }
+
+    var parsed = parseNeo4j(gephiJSON, parseOptions);
+    var parsedTest
+    // add the parsed data to the DataSets.
+    nodes.add(parsed.nodes);
+    edges.add(parsed.edges);
+
+    var data = nodes.get(2); // get the data from node 2 as example
+    nodeContent.innerHTML = JSON.stringify(data,undefined,3); // show the data in the div
+    network.fit(); // zoom to fit
+  }
+
+  Object.byString = function(o, s) {
+      s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
+      s = s.replace(/^\./, '');           // strip a leading dot
+      var a = s.split('.');
+      for (var i = 0, n = a.length; i < n; ++i) {
+          var k = a[i];
+          if (k in o) {
+              o = o[k];
+          } else {
+              return;
+          }
+      }
+      return o;
+  }
+
+</script>
+
+
+</body>
+</html>

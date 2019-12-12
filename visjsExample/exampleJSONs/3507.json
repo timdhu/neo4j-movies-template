@@ -1,0 +1,180 @@
+{
+  "nodes": [
+    {
+      "0": {
+        "identity": {
+          "low": 3507,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "name": "Liam Neeson",
+          "id": {
+            "low": 576,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "born": {
+            "low": 1952,
+            "high": 0
+          },
+          "poster_image": "https://image.tmdb.org/t/p/w185/oxCCVmDSxWcqIyMknRoOAZkvb6D.jpg"
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 3298,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "summary": "placeholder text",
+          "rated": "PG-13",
+          "duration": {
+            "low": 165,
+            "high": 0
+          },
+          "tagline": "The Legend Ends",
+          "id": {
+            "low": 564,
+            "high": 0
+          },
+          "community": {
+            "low": 0,
+            "high": 0
+          },
+          "title": "The Dark Knight Rises",
+          "poster_image": "http://image.tmdb.org/t/p/w185/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg"
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 3317,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "duration": {
+            "low": 100,
+            "high": 0
+          },
+          "rated": "PG",
+          "summary": "placeholder text",
+          "tagline": "Assembling in 2014",
+          "id": {
+            "low": 1366,
+            "high": 0
+          },
+          "community": {
+            "low": 1,
+            "high": 0
+          },
+          "title": "The LEGO Movie",
+          "poster_image": "http://image.tmdb.org/t/p/w185/lMHbadNmznKs5vgBAkHxKGHulOa.jpg"
+        }
+      },
+      "3": {
+        "identity": {
+          "low": 3299,
+          "high": 0
+        },
+        "labels": [
+          "Movie"
+        ],
+        "properties": {
+          "rated": "R",
+          "summary": "placeholder text",
+          "duration": {
+            "low": 195,
+            "high": 0
+          },
+          "tagline": "Whoever saves one life\\, saves the world entire.",
+          "id": {
+            "low": 598,
+            "high": 0
+          },
+          "community": {
+            "low": 3,
+            "high": 0
+          },
+          "title": "Schindler's List",
+          "poster_image": "http://image.tmdb.org/t/p/w185/tvOvW7Qjj63zbQW5TZ8CjPThAUd.jpg"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "0": {
+        "identity": {
+          "low": 5722,
+          "high": 0
+        },
+        "start": {
+          "low": 3507,
+          "high": 0
+        },
+        "end": {
+          "low": 3298,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Ra's Al Ghul"
+          ]
+        }
+      },
+      "1": {
+        "identity": {
+          "low": 5723,
+          "high": 0
+        },
+        "start": {
+          "low": 3507,
+          "high": 0
+        },
+        "end": {
+          "low": 3317,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Bad Cop",
+            "Good cop (voice)"
+          ]
+        }
+      },
+      "2": {
+        "identity": {
+          "low": 5721,
+          "high": 0
+        },
+        "start": {
+          "low": 3507,
+          "high": 0
+        },
+        "end": {
+          "low": 3299,
+          "high": 0
+        },
+        "type": "ACTED_IN",
+        "properties": {
+          "role": [
+            "Oskar Schindler"
+          ]
+        }
+      }
+    }
+  ]
+}

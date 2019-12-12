@@ -66,12 +66,12 @@ api.use(neo4jSessionCleanup);
 api.get('/nodes/label/:nodeLabel', routes.cypher_queries.list );
 api.get('/nodes/id/:id', routes.cypher_queries.findNodeByID)
 api.get('/nodes/labelid/:nodeLabel/:id', routes.cypher_queries.findNodeByIDandLabel)
-api.get('/nodes/neighbours/:nodeLabel/:id', routes.cypher_queries.findAllOneDistNeighbours)
-api.get('/nodes/neighbours/:nodeLabel/:id/:neighbourLabel', routes.cypher_queries.findAllOneDistNeighboursByType)
-api.get('/nodes/neighbours2/:nodeLabel/:id', routes.cypher_queries.findAllTwoDistNeighbours)
+api.get('/nodes/neighbours/:nodeLabel/:id/:edgeList', routes.cypher_queries.findAllOneDistNeighbours)
+api.get('/nodes/neighbours/:nodeLabel/:id/:neighbourLabel/:edgeList', routes.cypher_queries.findAllOneDistNeighboursByType)
+api.get('/nodes/neighbours2/:nodeLabel/:id/:edgeList', routes.cypher_queries.findAllTwoDistNeighbours)
 api.get('/nodes/range/:nodeLabel/:property/:min/:max', routes.cypher_queries.findByMaxMinProperty)
 api.get('/nodes/match/:nodeLabel/:property/:stringMatch', routes.cypher_queries.findByStringMatch)
-api.get('/nodes/shortestPath/:startLabel/:startID/:endLabel/:endID/:relationshipList', routes.cypher_queries.findShortestPath)
+api.get('/nodes/shortestPath/:startLabel/:startID/:endLabel/:endID/:edgeList', routes.cypher_queries.findShortestPath)
 api.get('/nodes/shortestPathProperties/:startLabel/:startProperty/:startValue/:endLabel/:endProperty/:endValue', routes.cypher_queries.findShortestPathWithProperties)
 api.get('/nodes/community/:communityID', routes.cypher_queries.findCommunity)
 
