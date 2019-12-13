@@ -28,6 +28,8 @@ var NodeType = module.exports = function (_node) {
       if (r.properties.id) {r.properties.id = r.properties.id.toNumber()};
       if (r.properties.duration) {r.properties.duration = r.properties.duration.toNumber()};
 
+      // apoc metagraph call
+      if (r.properties.count) {r.properties.count = r.properties.count.toNumber()};
     };
   })
 

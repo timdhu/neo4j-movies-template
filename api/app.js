@@ -85,6 +85,8 @@ api.get('/lists/edgeProperties', routes.cypher_queries.findEdgeProperties);
 api.get('/lists/nodePropertiesLabel/:nodeLabel', routes.cypher_queries.findNodePropertiesLabel);
 api.get('/lists/edgePropertiesLabel/:edgeType', routes.cypher_queries.findEdgePropertiesLabel);
 api.get('/lists/edgesLabel/:nodeLabel', routes.cypher_queries.findEdgesLabel);
+api.get('/lists/ids/:nodelabel', routes.cypher_queries.findIDsFromLabel);
+api.get('/lists/propertyList/:nodeLabel/:property', routes.cypher_queries.findPropertiesFromLabel);
 
 //api error handler
 api.use(function(err, req, res, next) {

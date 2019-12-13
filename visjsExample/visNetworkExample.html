@@ -1,233 +1,327 @@
-<!DOCTYPE html>
-<!-- saved from url=(0044)http://kenedict.com/networks/worldcup14/vis/ , thanks Andre!-->
-<html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF8">
-  <title>OSSIAN - GraphDB</title>
+  <!DOCTYPE html>
+  <!-- saved from url=(0044)http://kenedict.com/networks/worldcup14/vis/ , thanks Andre!-->
+  <html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <title>OSSIAN - GraphDB</title>
 
-  <meta name="example-screenshot-selector" content="body" />
+    <meta name="example-screenshot-selector" content="body" />
 
-    <script type="text/javascript" src="exampleUtil.js"></script>
+      <script type="text/javascript" src="exampleUtil.js"></script>
 
-    <script type="text/javascript" src="parseNeo4jJSON.js"></script>
+      <script type="text/javascript" src="parseNeo4jJSON.js"></script>
 
-  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
-  <style type="text/css">
-    #mynetwork {
-      width: 800px;
-      height: 800px;
-      border: 1px solid lightgray;
-    }
-
-    div.nodeContent {
-      position: relative;
-      border: 1px solid lightgray;
-      width: 480px;
-      height: 780px;
-      margin-top: -802px;
-      margin-left: 810px;
-      padding: 10px;
-    }
-
-    pre {
-      padding: 5px;
-      margin: 5px;
-    }
-
-    .string {
-      color: green;
-    }
-
-    .number {
-      color: darkorange;
-    }
-
-    .boolean {
-      color: blue;
-    }
-
-    .null {
-      color: magenta;
-    }
-
-    .key {
-      color: red;
-    }
-  </style>
-
-</head>
-
-<body>
-
-<h2>Ossian - GraphDB</h2>
-
-<div style="width:700px; font-size:14px; text-align: justify;">
-  Time to draw graphs!
-  <br/>
-</div>
-
-<p>
-  <div>Choose method:</div>
-  <br>
-  <div>Look at meta-graph: GO</div>
-  <br>
-  <div>Shortest path: Start label, start node (by search?), end label, end node (by search) : GO</div>
-  <br>
-  <div> Find neighbours: start label, start node (by search), relationships : GO</div>
-  <br>
-  <div> Find neighbours of distance 2: start label, start node (by search), relationships : GO</div>
-  <br>
-  <div> Find nodes with matching number properties: label, property, max/min : GO</div>
-  <br>
-  <div> Find nodes with matching strings: label,property, string : GO</div>
-  <br>
-  <div> Explore community: communityID : GO</div>
-  <br>
-  <div> Explore community of node: label, start node : GO</div>
-
-  <label><input type="checkbox" id="fixed" checked="checked"/> Fix in place after import.</label><br>
-  <label><input type="checkbox" id="parseColor"/> Parse the color instead of
-    copy (adds borders, highlights etc.)</label>
-</p>
-
-<div id="mynetwork"></div>
-<div class="nodeContent"><h4>Node Content:</h4>
-  <pre id="nodeContent"></pre>
-</div>
-
-<script type="text/javascript">
-  var network;
-
-  var nodes = new vis.DataSet();
-  var edges = new vis.DataSet();
-  var gephiImported;
-  var fixedCheckbox = document.getElementById('fixed');
-  fixedCheckbox.onchange = redrawAll;
-
-  var parseColorCheckbox = document.getElementById('parseColor');
-  parseColorCheckbox.onchange = redrawAll;
-
-  var nodeContent = document.getElementById('nodeContent');
-  loadJSON("http://localhost:3000/api/v0/nodes/neighbours/Person/3353/{edgeList}", redrawAll, function(err) {console.log('error')});
-
-  var container = document.getElementById('mynetwork');
-  var data = {
-    nodes: nodes,
-    edges: edges
-  };
-  var options = {
-    nodes: {
-      shape: 'circle',
-      font: {
-        face: 'Tahoma'
+    <style type="text/css">
+      #mynetwork {
+        width: 800px;
+        height: 800px;
+        border: 1px solid lightgray;
       }
-    },
-    edges: {
-      width: 0.15,
-      color: {
-        color: "#838988"
+
+      div.nodeContent {
+        position: relative;
+        border: 1px solid lightgray;
+        width: 480px;
+        height: 780px;
+        margin-top: -802px;
+        margin-left: 810px;
+        padding: 10px;
       }
-    },
-    groups: {
-      Person: {color: {background: '#a00d0c', border: '#838988'}},
-      Movie: {color: {background: '#d41e0b', border: '#838988'}},
-      Genre: {color: {background: '#ea4b09', border: '#838988'}},
-      Keyword: {color: {background: '#f38b07', border: '#838988'}},
-      // Future groups
-      // Project: {color: {background: '#a00d0c', border: '#838988'}},
-      // Asset: {color: {background: '#d41e0b', border: '#838988'}},
-      // Person: {color: {background: '#ea4b09', border: '#838988'}},
-      // Company: {color: {background: '#f38b07', border: '#838988'}},
-      // City: {color: {background: '#268099', border: '#838988'}},
-      // Province: {color: {background: '#2ca9e1', border: '#838988'}},
-      // Country: {color: {background: '#4a90e2', border: '#838988'}},
-      // Subregion: {color: {background: '#027bb6', border: '#838988'}},
-      // Region: {color: {background: '#215b7c', border: '#838988'}},
-    },
-    interaction: {
-      tooltipDelay: 200,
-      hideEdgesOnDrag: true
-    },
-    physics: {
-      stabilization: false,
-      barnesHut: {
-        gravitationalConstant: -10000,
-        springConstant: 0.002,
-        springLength: 100
+
+      pre {
+        padding: 5px;
+        margin: 5px;
       }
+
+      .string {
+        color: green;
+      }
+
+      .number {
+        color: darkorange;
+      }
+
+      .boolean {
+        color: blue;
+      }
+
+      .null {
+        color: magenta;
+      }
+
+      .key {
+        color: red;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+  <h2>Ossian - GraphDB</h2>
+
+  <div style="width:700px; font-size:14px; text-align: justify;">
+    Time to draw graphs!
+    <br/>
+  </div>
+
+  <p>
+    <div>Choose method:</div>
+    <br>
+    <div>
+      <label><input type="radio" id="metagraph" name="queryType"/> Make metagraph</label><br>
+      <label><input type="radio" id="shortestPath" name="queryType"/> Shortest path</label><br>
+      <label><input type="radio" id="neighbours" name="queryType"/>Find neighbours</label><br>
+      <label><input type="radio" id="neighbours2" name="queryType"/>Find neighbours-neighbours</label><br>
+      <label><input type="radio" id="minmaxSearch" name="queryType"/>Search by value</label><br>
+
+      <!-- Inputs for value search -->
+      <label><input type="radio" id="propertySearch" name="queryType"/>Search by property</label><br>
+      <!-- Inputs for property search -->
+      <label><input type="radio" id="findCommunity" name="queryType"/>Find community</label><br>
+      <!-- Inputs for finding community -->
+      <label><input type="radio" id="exploreCommunity" name="queryType"/>Explore community</label><br>
+      <!-- Inputs for finding community -->`
+    </div>
+
+    <form id="startInformation">
+      <select id="selectStartLabel">
+        <option>Choose a start label</option>
+      </select>
+      <select id="selectStartProperty">
+        <option>Choose a start property</option>
+      </select>
+      <select id="selectStartID">
+        <option>Choose start property value</option>
+      </select>
+    </form>
+    <form id="endInformation">
+      <select id="selectEndLabel">
+        <option>Choose an end label</option>
+      </select>
+      <select id="selectEndProperty">
+        <option>Choose an end property</option>
+      </select>
+      <select id="selectEndID">
+        <option>Choose an end property value</option>
+      </select>
+    </form>
+    <form id="neighboursRelationships">
+      <select id="selectRelationships">
+        <option>Select relationships</option>
+      </select>
+    </form>
+
+    <br>
+    <button type="submit", id="submitQuery">Go!</button>
+    <button type="submit", id="clearGraph">Clear graph</button>
+    <br>
+    <label><input type="checkbox" id="fixed" checked="checked"/> Fix in place after import.</label><br>
+    <label><input type="checkbox" id="parseColor"/> Parse the color instead of
+      copy (adds borders, highlights etc.)</label>
+  </p>
+
+  <div id="mynetwork"></div>
+  <div class="nodeContent"><h4>Node Content:</h4>
+    <pre id="nodeContent"></pre>
+  </div>
+
+  <script type="text/javascript">
+    var network;
+
+    var nodes = new vis.DataSet();
+    var edges = new vis.DataSet();
+    var gephiImported;
+    var fixedCheckbox = document.getElementById('fixed');
+    fixedCheckbox.onchange = redrawAll;
+
+    var parseColorCheckbox = document.getElementById('parseColor');
+    parseColorCheckbox.onchange = redrawAll;
+
+    var nodeContent = document.getElementById('nodeContent');
+    // "http://localhost:3000/api/v0/nodes/neighbours/Person/3353/{edgeList}"
+    // loadJSON("http://localhost:3000/api/v0/nodes/neighbours/Person/3353/{edgeList}", redrawAll, function(err) {console.log('error')});
+
+    var container = document.getElementById('mynetwork');
+    var data = {
+      nodes: nodes,
+      edges: edges
+    };
+
+    // visualisation options
+    var options = {
+      nodes: {
+        shape: 'circle',
+        font: {
+          face: 'Tahoma'
+        }
+      },
+      edges: {
+        width: 0.15,
+        color: {
+          color: "#838988"
+        }
+      },
+      groups: {
+        Person: {color: {background: '#a00d0c', border: '#838988'}},
+        Movie: {color: {background: '#d41e0b', border: '#838988'}},
+        Genre: {color: {background: '#ea4b09', border: '#838988'}},
+        Keyword: {color: {background: '#f38b07', border: '#838988'}},
+        // Future groups
+        // Project: {color: {background: '#a00d0c', border: '#838988'}},
+        // Asset: {color: {background: '#d41e0b', border: '#838988'}},
+        // Person: {color: {background: '#ea4b09', border: '#838988'}},
+        // Company: {color: {background: '#f38b07', border: '#838988'}},
+        // City: {color: {background: '#268099', border: '#838988'}},
+        // Province: {color: {background: '#2ca9e1', border: '#838988'}},
+        // Country: {color: {background: '#4a90e2', border: '#838988'}},
+        // Subregion: {color: {background: '#027bb6', border: '#838988'}},
+        // Region: {color: {background: '#215b7c', border: '#838988'}},
+      },
+      interaction: {
+        tooltipDelay: 200,
+        hideEdgesOnDrag: true
+      },
+      physics: {
+        stabilization: false,
+        barnesHut: {
+          gravitationalConstant: -10000,
+          springConstant: 0.002,
+          springLength: 100
+        }
+      }
+    };
+
+    network = new vis.Network(container, data, options);
+
+    // When you click on an edge/node, show details
+    network.on('click', function (params) {
+      if (params.nodes.length > 0) {
+        var data = nodes.get(params.nodes[0]); // get the data from selected node
+
+        nodeContent.innerHTML = JSON.stringify(data, undefined, 3); // show the data in the div
+      }
+    })
+    // when you double click, expand nodes
+    network.on('doubleClick', function (params) {})
+
+    function addToNetwork(inputJSON, inputOptions) {
+      var parsed = parseNeo4j(gephiJSON, parseOptions);
+      nodes.add(parsed.nodes);
+      edges.add(parsed.edges)
     }
-  };
 
-  network = new vis.Network(container, data, options);
-  network.on('click', function (params) {
-    if (params.nodes.length > 0) {
-      var data = nodes.get(params.nodes[0]); // get the data from selected node
-
-      nodeContent.innerHTML = JSON.stringify(data, undefined, 3); // show the data in the div
-    }
-  })
-
-  /**
-   * This function fills the DataSets. These DataSets will update the network.
-   */
-  function redrawAll(gephiJSON) {
-    if (gephiJSON.nodes === undefined) {
-      gephiJSON = gephiImported;
-    }
-    else {
-      gephiImported = gephiJSON;
+    function removeFromNetwork(inputJSON, inputOptions) {
+      var parsed = parseNeo4j(gephiJSON, parseOptions)
+      nodes.remove(parsed.nodes);
+      edges.remove(parsed.nodes);
     }
 
-    nodes.clear();
-    edges.clear();
-
-    var fixed = fixedCheckbox.checked;
-    var parseColor = parseColorCheckbox.checked;
-
-    parseOptions = {
-      nodes: {label:'properties.name'}
+    function clearNetwork() {
+            nodes.clear();
+            edges.clear();
     }
 
-    var parsed = parseNeo4j(gephiJSON, parseOptions);
-    var parsedTest
-    // add the parsed data to the DataSets.
-    nodes.add(parsed.nodes);
-    edges.add(parsed.edges);
-
-    var data = nodes.get(2); // get the data from node 2 as example
-    nodeContent.innerHTML = JSON.stringify(data,undefined,3); // show the data in the div
-    network.fit(); // zoom to fit
+    function changeOptions() {
+      shadowState = !shadowState;
+      network.setOptions({nodes:{shadow:shadowState},edges:{shadow:shadowState}});
   }
-
-  Object.byString = function(o, s) {
-      s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
-      s = s.replace(/^\./, '');           // strip a leading dot
-      var a = s.split('.');
-      for (var i = 0, n = a.length; i < n; ++i) {
-          var k = a[i];
-          if (k in o) {
-              o = o[k];
-          } else {
-              return;
-          }
+    /**
+     * This function fills the DataSets. These DataSets will update the network.
+     */
+    function redrawAll(gephiJSON) {
+      if (gephiJSON.nodes === undefined) {
+        gephiJSON = gephiImported;
       }
-      return o;
-  }
+      else {
+        gephiImported = gephiJSON;
+      }
 
-</script>
+      nodes.clear();
+      edges.clear();
 
-<div>Choose how nodes are coloured (label, community) </div>
-<br>
-<div> Choose how dynamics are decided (random, pagerank, community...) </div>
-<br>
-<div> Stabilize </div>
-<br>
-<div> Expand/Unexpand node selected node </div>
-<br>
-<div> Clear graph </div>
+      var fixed = fixedCheckbox.checked;
+      var parseColor = parseColorCheckbox.checked;
+
+      var parseOptions = {
+        nodes: {label:'properties.name'}
+      }
+
+      var parsed = parseNeo4j(gephiJSON, parseOptions);
+      var parsedTest
+      // add the parsed data to the DataSets.
+      nodes.add(parsed.nodes);
+      edges.add(parsed.edges);
+
+      var data = nodes.get(2); // get the data from node 2 as example
+      nodeContent.innerHTML = JSON.stringify(data,undefined,3); // show the data in the div
+      network.fit(); // zoom to fit
+    }
+
+    addOption = function(selectbox, text, value) {
+        var optn = document.createElement("OPTION");
+        optn.text = text;
+        optn.value = value;
+        selectbox.options.add(optn);
+    }
+
+    function makeDropDown(path,dropdown) {
+      loadJSON(path, makeList, function(err) {console.log('error')});
+      function makeList(inputJSON) {
+        if (dropdown) {
+            for (var i=0; i < inputJSON.length;++i){
+                addOption(dropdown, inputJSON[i], inputJSON[i]);
+            }
+        }
+      }
+    }
+
+    makeDropDown("http://localhost:3000/api/v0/lists/labels", document.getElementById("selectStartLabel"))
+    makeDropDown("http://localhost:3000/api/v0/lists/labels", document.getElementById("selectEndLabel"))
+
+
+    // makeDropDown("http://localhost:3000/api/v0/lists")
+    // var dropdownEnd = document.getElementById("selectEndLabel");
+    // loadJSON("http://localhost:3000/api/v0/lists/labels", makeList2, function(err) {console.log('error')});
+    // function makeList2(inputJSON) {
+    //   if (dropdownEnd) {
+    //       for (var i=0; i < inputJSON.length;++i){
+    //           addOption(dropdownEnd, inputJSON[i], inputJSON[i]);
+    //       }
+    //   }
+    // }
+
+    // var dropdown = document.getElementById("selectEndLabel");
+    // loadJSON("http://localhost:3000/api/v0/lists/labels", makeList, function(err) {console.log('error')});
+
+
+  </script>
+
+  <div>Color by:
+    <br>
+    <label><input type="radio" id="labelColors" name="nodeColouring"/>Node labels</label><br>
+    <label><input type="radio" id="communityColors" name="nodeColouring"/>Communities</label><br>
+  </div>
+  <br>
+  <div> Choose dynamics:
+    <br>
+    <label><input type="radio" id="randomPhysics" name="networkPhysics"/>Random</label><br>
+    <label><input type="radio" id="communityPhysics" name="networkPhysics"/>Communities</label><br>
+    <label><input type="radio" id="centralityPhysics" name="networkPhysics"/>Centrality</label><br>
+  </div>
+  <br>
+  <div>
+  <button type="stabilise", id="stabiliseNetwork">Stabilise</button>
+  </div>
+  <br>
+  <div>
+  <button type="expandNode", id="expandNode">Expand node relationships</button>
+  <button type="collapseNode", id="collapseNode">Collapse node relationships</button>
+  </div>
 
 
 
-</body>
-</html>
+  </body>
+  </html>

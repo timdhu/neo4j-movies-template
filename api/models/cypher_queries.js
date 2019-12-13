@@ -3,6 +3,7 @@ var dbUtils = require('../neo4j/dbUtils');
 
 var NodeType = require('../models/neo4j/nodeType');
 var EdgeType = require('../models/neo4j/edgeType');
+var DictType = require('../models/neo4j/dictType');
 
 // Export one node and information about the node
 var _singleNode = function (record) {
@@ -33,7 +34,7 @@ function returnNodesAndEdges(neo4jResult) {
     result.edges = neo4jResult.records.map(r => new EdgeType(r.get('edge')))
     result.edges = result.edges[0]
   };
-
+  console.log(neo4jResult)
   return result;
 };
 
@@ -47,6 +48,12 @@ function returnList(neo4jResult) {
   return result;
 };
 
+function returnDict(neo4jResult) {
+  var result = {};
+  result = neo4jResult.records.map(r =>
+    new DictType(r))
+  return result
+}
 // Get all nodes of a particular type
 var getAllOneNodeType = function (session, nodeLabel="Movie") {
   var query = [
@@ -367,10 +374,28 @@ var getEdgesLabel = function (session, nodeLabel) {
   return session.run(query).then(result => returnList(result))
 };
 
+// Get all IDs of a node label type
+var getIDsFromLabel = function(session,nodeLabel) {
+  var query = ['MATCH (node:',
+  nodeLabel,
+  ') RETURN collect(id(node))'
+  ].join('')
+  return session.run(query).then(result => returnList(result))
+}
+
+// Get list of IDs and property values of a given property
+var getPropertiesFromLabel = function(session,nodeLabel,property) {
+  var query = ['MATCH (node:',
+  nodeLabel,
+  ') RETURN id(node) AS key,node.name AS value'
+  ].join('')
+  return session.run(query).then(result => returnDict(result))
+}
+
 // Create metagraph
 var getMetagraph = function (session,nodeLabel) {
-  var query = 'CALL apoc.meta.graph'
-  return session.run(query).then(result => retunNodesAndEdges(result))
+  var query = 'CALL apoc.meta.graph YIELD nodes AS node, relationships AS edge'
+  return session.run(query).then(result => returnNodesAndEdges(result))
 };
 
 // TODO:
@@ -402,5 +427,7 @@ module.exports = {
   getNodePropertiesLabel: getNodePropertiesLabel,
   getEdgePropertiesLabel: getEdgePropertiesLabel,
   getEdgesLabel: getEdgesLabel,
-  getMetagraph: getMetagraph
+  getMetagraph: getMetagraph,
+  getIDsFromLabel: getIDsFromLabel,
+  getPropertiesFromLabel: getPropertiesFromLabel
 };

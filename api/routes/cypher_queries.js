@@ -55,6 +55,18 @@ var Cypher_Queries = require('../models/cypher_queries')
  *     items: string
  */
 
+ /**
+  * @swagger
+  * definition:
+  *   DictOutput:
+  *     type: object
+  *     properties:
+  *       id:
+  *         type: integer
+  *       value:
+  *         type: integer
+  */
+
 /**
  * @swagger
  * /api/v0/nodes/label/{nodeLabel}:
@@ -806,6 +818,78 @@ exports.findCommunityFromID= function (req, res, next) {
   exports.findMetagraph= function (req, res, next) {
     var nodeLabel = req.params.nodeLabel;
     Cypher_Queries.getMetagraph(dbUtils.getSession(req))
+      .then(response => writeResponse(res, response))
+      .catch(next);
+  };
+
+
+  /**
+   * @swagger
+   * /api/v0/lists/ids/{nodeLabel}:
+   *   get:
+   *     tags:
+   *     - lists
+   *     description: Get all node IDs for a particular label
+   *     summary: Get all node IDs for a particular label
+   *     produces:
+   *       - application/json
+   *     parameters:
+   *       - name: nodeLabel
+   *         description: Label of the node
+   *         in: path
+   *         required: true
+   *         type: string
+   *     responses:
+   *       200:
+   *         description: List of integers
+   *         schema:
+   *           type: array
+   *           items:
+   *             $ref: '#/definitions/ListOutput'
+   *       404:
+   *          description: Node properties not found
+   */
+  exports.findIDsFromLabel= function (req, res, next) {
+    var nodeLabel = req.params.nodeLabel;
+    Cypher_Queries.getIDsFromLabel(dbUtils.getSession(req), req.params.nodeLabel)
+      .then(response => writeResponse(res, response))
+      .catch(next);
+  };
+
+  /**
+   * @swagger
+   * /api/v0/lists/propertyList/{nodeLabel}/{property}:
+   *   get:
+   *     tags:
+   *     - dicts
+   *     description: Get ID-value pairs for a particular property
+   *     summary: Get ID-value pairs for a particular property
+   *     produces:
+   *       - application/json
+   *     parameters:
+   *       - name: nodeLabel
+   *         description: Label of the node
+   *         in: path
+   *         required: true
+   *         type: string
+   *       - name: property
+   *         description: property of interest
+   *         in: path
+   *         required: true
+   *         type: string
+   *     responses:
+   *       200:
+   *         description: ID - property value pairs
+   *         schema:
+   *           type: array
+   *           items:
+   *             $ref: '#/definitions/DictOutput'
+   *       404:
+   *          description: Node properties not found
+   */
+  exports.findPropertiesFromLabel= function (req, res, next) {
+    var nodeLabel = req.params.nodeLabel;
+    Cypher_Queries.getPropertiesFromLabel(dbUtils.getSession(req), nodeLabel, req.params.property)
       .then(response => writeResponse(res, response))
       .catch(next);
   };
