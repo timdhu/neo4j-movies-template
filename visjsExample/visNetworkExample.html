@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF8">
-  <title>Vis Network | Data | Importing from Gephi (JSON)</title>
+  <title>OSSIAN - GraphDB</title>
 
   <meta name="example-screenshot-selector" content="body" />
 
@@ -60,7 +60,7 @@
 
 <body>
 
-<h2>Dynamic Data - Importing from Gephi (JSON)</h2>
+<h2>Ossian - GraphDB</h2>
 
 <div style="width:700px; font-size:14px; text-align: justify;">
   Time to draw graphs!
@@ -68,6 +68,24 @@
 </div>
 
 <p>
+  <div>Choose method:</div>
+  <br>
+  <div>Look at meta-graph: GO</div>
+  <br>
+  <div>Shortest path: Start label, start node (by search?), end label, end node (by search) : GO</div>
+  <br>
+  <div> Find neighbours: start label, start node (by search), relationships : GO</div>
+  <br>
+  <div> Find neighbours of distance 2: start label, start node (by search), relationships : GO</div>
+  <br>
+  <div> Find nodes with matching number properties: label, property, max/min : GO</div>
+  <br>
+  <div> Find nodes with matching strings: label,property, string : GO</div>
+  <br>
+  <div> Explore community: communityID : GO</div>
+  <br>
+  <div> Explore community of node: label, start node : GO</div>
+
   <label><input type="checkbox" id="fixed" checked="checked"/> Fix in place after import.</label><br>
   <label><input type="checkbox" id="parseColor"/> Parse the color instead of
     copy (adds borders, highlights etc.)</label>
@@ -112,8 +130,20 @@
       }
     },
     groups: {
-      Person: {color: {background: '#a91806', border: '#838988'}},
-      Movie: {color: {background: '#2ca9e1', border: '#838988'}},
+      Person: {color: {background: '#a00d0c', border: '#838988'}},
+      Movie: {color: {background: '#d41e0b', border: '#838988'}},
+      Genre: {color: {background: '#ea4b09', border: '#838988'}},
+      Keyword: {color: {background: '#f38b07', border: '#838988'}},
+      // Future groups
+      // Project: {color: {background: '#a00d0c', border: '#838988'}},
+      // Asset: {color: {background: '#d41e0b', border: '#838988'}},
+      // Person: {color: {background: '#ea4b09', border: '#838988'}},
+      // Company: {color: {background: '#f38b07', border: '#838988'}},
+      // City: {color: {background: '#268099', border: '#838988'}},
+      // Province: {color: {background: '#2ca9e1', border: '#838988'}},
+      // Country: {color: {background: '#4a90e2', border: '#838988'}},
+      // Subregion: {color: {background: '#027bb6', border: '#838988'}},
+      // Region: {color: {background: '#215b7c', border: '#838988'}},
     },
     interaction: {
       tooltipDelay: 200,
@@ -186,6 +216,17 @@
   }
 
 </script>
+
+<div>Choose how nodes are coloured (label, community) </div>
+<br>
+<div> Choose how dynamics are decided (random, pagerank, community...) </div>
+<br>
+<div> Stabilize </div>
+<br>
+<div> Expand/Unexpand node selected node </div>
+<br>
+<div> Clear graph </div>
+
 
 
 </body>

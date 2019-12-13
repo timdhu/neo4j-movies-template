@@ -37,6 +37,16 @@ function returnNodesAndEdges(neo4jResult) {
   return result;
 };
 
+function returnList(neo4jResult) {
+  if (!_.isEmpty(neo4jResult.records)) {
+    var result =  neo4jResult.records[0].get('list');
+  }
+  else {
+    var result = []
+  }
+  return result;
+};
+
 // Get all nodes of a particular type
 var getAllOneNodeType = function (session, nodeLabel="Movie") {
   var query = [
@@ -93,6 +103,11 @@ var getNodeByIDandLabel = function(session, nodeId, nodeLabel) {
     }
   });
 };
+
+// Get maximum of 10 neighbours of selected node (how to choose 10? Most important, random,...)
+var get10OneDistNeighbours = function (session, startLabel, startID, edgeList) {
+
+}
 
 // Get all nodes and edges one step away from start node
 var getAllOneDistNeighbours = function (session, startLabel, startId, edgeList) {
@@ -286,14 +301,84 @@ var getCommunity = function (session, communityID) {
   }).then(result => returnNodesAndEdges(result));
 };
 
+
+// Find community of node given by ID
+var getCommunityFromID = function (session, nodeID) {
+  var query = [
+    'MATCH (node1)',
+    'WHERE id(node1)={nodeID}',
+    'WITH node1',
+    'MATCH (node1)-[edge]-(node2 {community:node1.community})',
+    'WITH edge, [node1,node2] AS nodes',
+    'UNWIND nodes AS node',
+    'RETURN collect(DISTINCT node) AS node,',
+    'collect(DISTINCT edge) AS edge'
+  ].join(' ');
+  return session.run(query, {
+    nodeID: parseInt(nodeID)
+  }).then(result => returnNodesAndEdges(result));
+};
+
+// Get all labels in the network
+var getLabels = function (session) {
+  var query = 'MATCH (n) WITH n UNWIND labels(n) AS labels RETURN collect(DISTINCT labels) AS list'
+  return session.run(query).then(result => returnList(result))
+};
+
+// Get all edges in the network
+var getEdges = function (session) {
+  var query = 'MATCH ()-[relationship]-() WITH relationship RETURN collect(DISTINCT type(relationship)) AS list'
+  return session.run(query).then(result => returnList(result))
+};
+
+// get all node properties in the network
+var getNodeProperties = function (session) {
+  var query = 'MATCH (n) WITH n UNWIND keys(n) as key RETURN collect(DISTINCT key) AS list'
+  return session.run(query).then(result => returnList(result))
+};
+
+// get all edge properties in the network
+var getEdgeProperties = function (session) {
+  var query = 'MATCH ()-[n]-() WITH n UNWIND keys(n) as key RETURN collect(DISTINCT key) AS list'
+  return session.run(query).then(result => returnList(result))
+};
+
+// get all edge properties of a given type
+var getNodePropertiesLabel = function (session, nodeLabel) {
+  var query = ['MATCH (n:',
+  nodeLabel,
+  ') WITH n UNWIND keys(n) as key RETURN collect(DISTINCT key) AS list'].join('')
+  return session.run(query).then(result => returnList(result))
+};
+
+// get all node properties of a given label
+var getEdgePropertiesLabel = function (session, edgeType) {
+  var query = ['MATCH  ()-[n:',
+  edgeType,
+  ']-() WITH n UNWIND keys(n) as key RETURN collect(DISTINCT key) AS list'].join('')
+  return session.run(query).then(result => returnList(result))
+};
+
+// Get all relationships from a particular node label in the network
+var getEdgesLabel = function (session, nodeLabel) {
+  var query = ['MATCH (:',
+  nodeLabel,
+  ')-[relationship]-() WITH relationship RETURN collect(DISTINCT type(relationship)) AS list'].join('')
+  return session.run(query).then(result => returnList(result))
+};
+
+// Create metagraph
+var getMetagraph = function (session,nodeLabel) {
+  var query = 'CALL apoc.meta.graph'
+  return session.run(query).then(result => retunNodesAndEdges(result))
+};
+
 // TODO:
 // Queries:
-//         neighbour queries with different edges
+//         Get all 2-neighbours with different first and second relationships as options
 //         include edges in shortest path query
-//         query to list particular properties of nodes
-//         query to list all labels
-//         query to list all relationships
-// perform community algorithm on subgraph (stream results?)
+//         perform community and page rank on subgraph on the fly
+//         construct virtual nodes for visualisation
 
 
 // export exposed functions
@@ -308,5 +393,14 @@ module.exports = {
   getByStringMatch: getByStringMatch,
   getShortestPath: getShortestPath,
   getShortestPathWithProperties: getShortestPathWithProperties,
-  getCommunity: getCommunity
+  getCommunity: getCommunity,
+  getCommunityFromID: getCommunityFromID,
+  getLabels: getLabels,
+  getEdges: getEdges,
+  getNodeProperties: getNodeProperties,
+  getEdgeProperties: getEdgeProperties,
+  getNodePropertiesLabel: getNodePropertiesLabel,
+  getEdgePropertiesLabel: getEdgePropertiesLabel,
+  getEdgesLabel: getEdgesLabel,
+  getMetagraph: getMetagraph
 };

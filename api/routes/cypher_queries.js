@@ -18,10 +18,7 @@ var Cypher_Queries = require('../models/cypher_queries')
   *           type: object
   *           properties:
   *             identity:
-  *               type: object
-  *               properties:
-  *                 low: integer
-  *                 high: integer
+  *               type: integer
   *             labels:
   *               type: array
   *               items: string
@@ -29,41 +26,34 @@ var Cypher_Queries = require('../models/cypher_queries')
   *               type: object
   *               properties:
   *                 id:
-  *                   type: object
-  *                   properties:
-  *                     low: integer
-  *                     high: integer
+  *                   type: integer
   *       edges:
   *         type: array
   *         items:
   *           type: object
   *           properties:
   *             identity:
-  *               type: object
-  *               properties:
-  *                 low: integer
-  *                 high: integer
+  *               type: integer
   *             start:
-  *               type: object
-  *               properties:
-  *                 low: integer
-  *                 high: integer
+  *               type: integer
   *             end:
-  *               type: object
-  *               properties:
-  *                 low: integer
-  *                 high: integer
+  *               type: integer
   *             type:
   *               type: string
   *             properties:
   *               type: object
   *               properties:
   *                 id:
-  *                   type: object
-  *                   properties:
-  *                     low: integer
-  *                     high: integer
+  *                   type: integer
   */
+
+/**
+ * @swagger
+ * definition:
+ *   ListOutput:
+ *     type: array
+ *     items: string
+ */
 
 /**
  * @swagger
@@ -562,3 +552,260 @@ exports.findCommunity= function (req, res, next) {
     .then(response => writeResponse(res, response))
     .catch(next);
 };
+
+/**
+ * @swagger
+ * /api/v0/nodes/communityFromID/{nodeID}:
+ *   get:
+ *     tags:
+ *     - nodes
+ *     description: Find all nodes and edges by community ID
+ *     summary: Find all nodes and edges by community ID
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: nodeID
+ *         description: ID of node
+ *         in: path
+ *         required: true
+ *         type: integer
+ *     responses:
+ *       200:
+ *         description: Nodes and edges in the community
+ *         schema:
+ *           $ref: '#/definitions/Output'
+ *       404:
+ *         description: node not found
+ */
+exports.findCommunityFromID= function (req, res, next) {
+  Cypher_Queries.getCommunityFromID(dbUtils.getSession(req), req.params.nodeID)
+    .then(response => writeResponse(res, response))
+    .catch(next);
+};
+
+/**
+ * @swagger
+ * /api/v0/lists/labels:
+ *   get:
+ *     tags:
+ *     - lists
+ *     description: List all labels of nodes
+ *     summary: List all labels of nodes
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: A list of labels
+ *         schema:
+ *           $ref: '#/definitions/ListOutput'
+ *       404:
+ *         description: node not found
+ */
+ exports.findLabels = function (req, res, next) {
+   Cypher_Queries.getLabels(dbUtils.getSession(req))
+    .then(response => writeResponse(res,response))
+    .catch(next)
+ }
+
+ /**
+  * @swagger
+  * /api/v0/lists/edges:
+  *   get:
+  *     tags:
+  *     - lists
+  *     description: List all edge types
+  *     summary: List all edge types
+  *     produces:
+  *       - application/json
+  *     responses:
+  *       200:
+  *         description: A list of edge types
+  *         schema:
+  *           $ref: '#/definitions/ListOutput'
+  *       404:
+  *         description: node not found
+  */
+  exports.findEdges = function (req, res, next) {
+    Cypher_Queries.getEdges(dbUtils.getSession(req))
+     .then(response => writeResponse(res,response))
+     .catch(next)
+  }
+
+  /**
+   * @swagger
+   * /api/v0/lists/nodeProperties:
+   *   get:
+   *     tags:
+   *     - lists
+   *     description: Find all node properties
+   *     summary: Find all node properties
+   *     produces:
+   *       - application/json
+   *     responses:
+   *       200:
+   *         description: Find all node properties
+   *         schema:
+   *           type: array
+   *           items:
+   *             $ref: '#/definitions/ListOutput'
+   *       404:
+   *          description: Node properties not found
+   */
+  exports.findNodeProperties= function (req, res, next) {
+    var nodeLabel = req.params.nodeLabel;
+    Cypher_Queries.getNodeProperties(dbUtils.getSession(req)  )
+      .then(response => writeResponse(res, response))
+      .catch(next);
+  };
+
+  /**
+   * @swagger
+   * /api/v0/lists/edgeProperties:
+   *   get:
+   *     tags:
+   *     - lists
+   *     description: Find all edge properties
+   *     summary: Find all edge properties
+   *     produces:
+   *       - application/json
+   *     responses:
+   *       200:
+   *         description: Find all edge properties
+   *         schema:
+   *           type: array
+   *           items:
+   *             $ref: '#/definitions/ListOutput'
+   *       404:
+   *          description: Edge properties not found
+   */
+  exports.findEdgeProperties= function (req, res, next) {
+    var nodeLabel = req.params.nodeLabel;
+    Cypher_Queries.getEdgeProperties(dbUtils.getSession(req)  )
+      .then(response => writeResponse(res, response))
+      .catch(next);
+  };
+
+  /**
+   * @swagger
+   * /api/v0/lists/nodePropertiesLabel/{nodeLabel}:
+   *   get:
+   *     tags:
+   *     - lists
+   *     description: Find all node properties for given label
+   *     summary: Find all node properties for given label
+   *     produces:
+   *       - application/json
+   *     parameters:
+   *       - name: nodeLabel
+   *         description: Label of the start node
+   *         in: path
+   *         required: true
+   *         type: string
+   *     responses:
+   *       200:
+   *         description: List of properties
+   *         schema:
+   *           type: array
+   *           items:
+   *             $ref: '#/definitions/ListOutput'
+   *       404:
+   *          description: Node properties not found
+   */
+  exports.findNodePropertiesLabel= function (req, res, next) {
+    var nodeLabel = req.params.nodeLabel;
+    Cypher_Queries.getNodePropertiesLabel(dbUtils.getSession(req), req.params.nodeLabel)
+      .then(response => writeResponse(res, response))
+      .catch(next);
+  };
+
+  /**
+   * @swagger
+   * /api/v0/lists/edgePropertiesLabel/{edgeType}:
+   *   get:
+   *     tags:
+   *     - lists
+   *     description: Find all edge properties of a given type
+   *     summary: Find all edge properties of a given type
+   *     produces:
+   *       - application/json
+   *     parameters:
+   *       - name: edgeType
+   *         description: Label of the start node
+   *         in: path
+   *         required: true
+   *         type: string
+   *     responses:
+   *       200:
+   *         description: List of edge properties
+   *         schema:
+   *           type: array
+   *           items:
+   *             $ref: '#/definitions/ListOutput'
+   *       404:
+   *          description: Node properties not found
+   */
+  exports.findEdgePropertiesLabel = function (req, res, next) {
+    Cypher_Queries.getEdgePropertiesLabel (dbUtils.getSession(req), req.params.edgeType)
+      .then(response => writeResponse(res, response))
+      .catch(next);
+  };
+
+  /**
+   * @swagger
+   * /api/v0/lists/edgesLabel/{nodeLabel}:
+   *   get:
+   *     tags:
+   *     - lists
+   *     description: Get all edges from a particular label node
+   *     summary: Get all edges from a particular label node
+   *     produces:
+   *       - application/json
+   *     parameters:
+   *       - name: nodeLabel
+   *         description: Label of the node
+   *         in: path
+   *         required: true
+   *         type: string
+   *     responses:
+   *       200:
+   *         description: List of edge types
+   *         schema:
+   *           type: array
+   *           items:
+   *             $ref: '#/definitions/ListOutput'
+   *       404:
+   *          description: Node properties not found
+   */
+  exports.findEdgesLabel= function (req, res, next) {
+    var nodeLabel = req.params.nodeLabel;
+    Cypher_Queries.getEdgesLabel(dbUtils.getSession(req), req.params.nodeLabel)
+      .then(response => writeResponse(res, response))
+      .catch(next);
+  };
+
+  /**
+   * @swagger
+   * /api/v0/nodes/metagraph:
+   *   get:
+   *     tags:
+   *     - nodes
+   *     description: Produce a metagraph of the graph database
+   *     summary: Produce a metagraph of the graph database
+   *     produces:
+   *       - application/json
+   *     responses:
+   *       200:
+   *         description: List of edge types
+   *         schema:
+   *           type: array
+   *           items:
+   *             $ref: '#/definitions/Output'
+   *       404:
+   *          description: Node properties not found
+   */
+  exports.findMetagraph= function (req, res, next) {
+    var nodeLabel = req.params.nodeLabel;
+    Cypher_Queries.getMetagraph(dbUtils.getSession(req))
+      .then(response => writeResponse(res, response))
+      .catch(next);
+  };
